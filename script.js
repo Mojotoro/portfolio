@@ -82,6 +82,28 @@
     }
   };
 
+  Object.assign(i18n.en, {
+    profileTitle: "Beautiful spaces must work in real life and communicate clearly to the construction team",
+    profileText: "Best is an Interior Designer with a background in design, drawing, site supervision and site coordination, working with owners, designers, contractors, suppliers and site teams to turn design work into reality in a structured way.",
+    profileSince: "Started freelance work",
+    profileProjects: "selected projects",
+    profileWorkflow: "design to site workflow",
+    selectedWork: "Selected Work",
+    selectedWorkTitle: "Featured work categories",
+    seeAllProjects: "See all projects"
+  });
+
+  Object.assign(i18n.th, {
+    profileTitle: "พื้นที่ที่สวยต้องใช้งานได้จริง และส่งต่อถึงทีมก่อสร้างได้ชัดเจน",
+    profileText: "Best เป็น Interior Designer ที่มีพื้นฐานด้าน design, drawing, site supervision และ site coordination ทำงานร่วมกับ owner, designer, contractor, supplier และทีมหน้างาน เพื่อผลักดันงานออกแบบให้เกิดขึ้นจริงอย่างเป็นระบบ",
+    profileSince: "เริ่มทำงาน freelance",
+    profileProjects: "โปรเจกต์ที่คัดเลือก",
+    profileWorkflow: "ขั้นตอนจากแบบสู่ไซต์งาน",
+    selectedWork: "ผลงานที่คัดเลือก",
+    selectedWorkTitle: "หมวดผลงานหลัก",
+    seeAllProjects: "ดูผลงานทั้งหมด"
+  });
+
   const projectOrder = [
     "office-sukhumvit31",
     "one-bangkok-popup",
