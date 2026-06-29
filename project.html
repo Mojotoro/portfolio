@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Detail | Ratipong Kaewjaijong</title>
+  <meta name="description" content="Project detail page for Ratipong Kaewjaijong interior design portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header solid" data-header>
+    <a class="brand" href="index.html" aria-label="Ratipong home">
+      <span>R</span>
+      <strong>Ratipong</strong>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation" data-nav>
+      <a href="index.html#profile">Profile</a>
+      <a href="projects.html">Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="projects.html">All Work</a>
+  </header>
+
+  <main id="projectRoot"></main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img id="lightboxImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+  </div>
+
+  <footer class="site-footer">
+    <span>© 2026 Ratipong Kaewjaijong</span>
+    <a href="projects.html">Portfolio Index</a>
+  </footer>
+
+  <script src="portfolio-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

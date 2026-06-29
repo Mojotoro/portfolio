@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Index | Ratipong Kaewjaijong</title>
+  <meta name="description" content="Browse interior design, workplace, hospitality, retail, residential and visualization projects by Ratipong Kaewjaijong.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header solid" data-header>
+    <a class="brand" href="index.html" aria-label="Ratipong home">
+      <span>R</span>
+      <strong>Ratipong</strong>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation" data-nav>
+      <a href="index.html#profile">Profile</a>
+      <a href="projects.html" aria-current="page">Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="index.html">Home</a>
+  </header>
+
+  <main>
+    <section class="page-hero compact">
+      <p class="eyebrow">Portfolio Index</p>
+      <h1>ผลงานแยกตามหมวดหมู่</h1>
+      <p>
+        เลือกดูงานตามประเภทพื้นที่ พร้อมหน้ารายละเอียดและ gallery สำหรับแต่ละโปรเจกต์
+        เพื่อเห็นทั้งภาพรวม แนวคิด บทบาท และขอบเขตการทำงาน
+      </p>
+    </section>
+
+    <section class="portfolio-browser">
+      <div class="browser-tools">
+        <div class="filter-bar" aria-label="Project filters">
+          <button class="filter-chip active" type="button" data-filter="all">All</button>
+          <button class="filter-chip" type="button" data-filter="Hospitality">Hospitality</button>
+          <button class="filter-chip" type="button" data-filter="Workplace">Workplace</button>
+          <button class="filter-chip" type="button" data-filter="Education">Education</button>
+          <button class="filter-chip" type="button" data-filter="Retail">Retail</button>
+          <button class="filter-chip" type="button" data-filter="Residential">Residential</button>
+          <button class="filter-chip" type="button" data-filter="Visualization">Visualization</button>
+        </div>
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Ratipong Kaewjaijong</span>
+    <a href="index.html#contact">Contact</a>
+  </footer>
+
+  <script src="portfolio-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
