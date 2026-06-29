@@ -25,6 +25,11 @@
       projectImages: "Project images",
       projectNotFound: "Project not found",
       projectNotFoundText: "Back to the portfolio index to choose another project.",
+      pdfPageTitle: "Aluminum Profile",
+      pdfPageText: "PDF files for coffee shop and aluminum profile related work.",
+      pdfPageBack: "Back to project",
+      pdfPageAll: "All Projects",
+      pdfPageOpen: "Open PDF files",
       resultAll: (count) => `${count} project${count === 1 ? "" : "s"}`,
       resultFilter: (count, label) => `${count} project${count === 1 ? "" : "s"} in ${label}`,
       role: "Role",
@@ -60,13 +65,18 @@
       projectImages: "รูปภาพโปรเจกต์",
       projectNotFound: "ไม่พบโปรเจกต์",
       projectNotFoundText: "กลับไปหน้ารวมผลงานเพื่อเลือกโปรเจกต์ใหม่",
+      pdfPageTitle: "เอกสาร Aluminum Profile",
+      pdfPageText: "รวมไฟล์ PDF สำหรับงาน coffee shop และ aluminum profile ที่เกี่ยวข้อง",
+      pdfPageBack: "กลับไปโปรเจกต์",
+      pdfPageAll: "ดูผลงานทั้งหมด",
+      pdfPageOpen: "เปิดไฟล์ PDF",
       resultAll: (count) => `${count} โปรเจกต์`,
       resultFilter: (count, label) => `${count} โปรเจกต์ใน ${label}`,
       role: "บทบาท",
       scope: "ขอบเขตงาน",
       status: "สถานะ",
       viewGallery: "ดูรูปภาพ",
-      viewPdf: "View PDF",
+      viewPdf: "ดู PDF",
       work: "ผลงาน",
       year: "ปี"
     }
@@ -437,6 +447,22 @@
       });
       header.appendChild(button);
     });
+
+    const pdfPage = document.querySelector(".pdf-listing");
+    if (pdfPage) {
+      const hero = document.querySelector(".portfolio-hero");
+      const eyebrow = hero?.querySelector(".eyebrow");
+      const heading = hero?.querySelector("h1");
+      const intro = hero?.querySelector("p:not(.eyebrow)");
+      const heroLinks = hero?.querySelectorAll(".hero-actions a") || [];
+      const sectionHeading = pdfPage.querySelector(".section-heading h2");
+      if (eyebrow) eyebrow.textContent = t("pdfDocuments");
+      if (heading) heading.textContent = t("pdfPageTitle");
+      if (intro) intro.textContent = t("pdfPageText");
+      if (heroLinks[0]) heroLinks[0].textContent = t("pdfPageBack");
+      if (heroLinks[1]) heroLinks[1].textContent = t("pdfPageAll");
+      if (sectionHeading) sectionHeading.textContent = t("pdfPageOpen");
+    }
   }
 
   function setupHeader() {
