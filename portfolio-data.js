@@ -11,7 +11,21 @@ window.portfolioProjects = [
     cover: "images/featured/resort-01.jpg",
     cardSize: "large",
     cardImages: ["images/featured/resort-01.jpg", "images/featured/resort-02.jpg"],
-    images: ["images/featured/resort-01.jpg", "images/featured/resort-02.jpg", "images/featured/resort-bedroom-01.jpg", "images/portfolio-pages/page-03.png"],
+    images: [
+      "images/featured/Resort/web/resort-gallery-01.jpg",
+      "images/featured/Resort/web/resort-gallery-02.jpg",
+      "images/featured/Resort/web/resort-gallery-03.jpg",
+      "images/featured/Resort/web/resort-gallery-04.jpg",
+      "images/featured/Resort/web/resort-gallery-05.jpg",
+      "images/featured/Resort/web/resort-gallery-06.jpg",
+      "images/featured/Resort/web/resort-gallery-07.jpg",
+      "images/featured/Resort/web/resort-gallery-08.jpg",
+      "images/featured/Resort/web/resort-gallery-09.jpg",
+      "images/featured/Resort/web/resort-gallery-10.jpg",
+      "images/featured/Resort/web/resort-gallery-11.jpg",
+      "images/portfolio-pages/page-03.png"
+    ],
+    planUrl: "images/portfolio-pages/page-03.png",
     tags: ["Guest room", "Warm material", "Hospitality flow"],
     summary: "Resort interior design with a warm hospitality mood, soft material balance and relaxed circulation for guest experience.",
     highlight: "ออกแบบรีสอร์ตให้รู้สึกอบอุ่น พักผ่อนได้จริง และเชื่อมบรรยากาศภายในกับวิวธรรมชาติอย่างนุ่มนวล"
@@ -49,8 +63,8 @@ window.portfolioProjects = [
     highlight: "จัดพื้นที่ภายนอกให้เดินง่าย พักได้ และรองรับการใช้งานร่วมกันของนักศึกษาในชีวิตประจำวัน"
   },
   {
-    id: "vip-room",
-    title: "VIP Reception Room",
+    id: "VIP RESIDENT ROOM",
+    title: "VIP RESIDENT ROOM",
     category: "Workplace",
     location: "RMUTT",
     role: "Interior Designer",
@@ -63,7 +77,7 @@ window.portfolioProjects = [
     images: ["images/featured/vip-room-01.jpg", "images/featured/vip-room-02.jpg", "images/featured/vip-room-03.jpg", "images/portfolio-pages/page-06.png"],
     tags: ["Reception", "Classic detail", "Formal seating"],
     summary: "Elegant reception room with classic wall details, chandelier lighting and formal furniture planning.",
-    highlight: "ออกแบบห้องรับรอง VIP ให้ดูสุภาพ เป็นทางการ และรองรับแขกระดับผู้บริหารด้วยบรรยากาศที่น่าเชื่อถือ"
+    highlight: "ออกแบบห้องรับรองให้ดูสุภาพ เป็นทางการ และมีรายละเอียดคลาสสิกที่สร้างความน่าเชื่อถือ"
   },
   {
     id: "office-rmutt",
@@ -76,7 +90,13 @@ window.portfolioProjects = [
     scope: "Space planning, 3D visualization",
     cover: "images/featured/office-rmutt-01.jpg",
     cardImages: ["images/featured/office-rmutt-01.jpg", "images/featured/office-rmutt-02.jpg"],
-    images: ["images/featured/office-rmutt-01.jpg", "images/featured/office-rmutt-02.jpg", "images/office/office1.png", "images/portfolio-pages/page-07.png"],
+    images: [
+      "images/featured/RMUTT OFFICE/web/office-rmutt-gallery-01.jpg",
+      "images/featured/RMUTT OFFICE/web/office-rmutt-gallery-02.jpg",
+      "images/featured/RMUTT OFFICE/web/office-rmutt-gallery-03.jpg",
+      "images/featured/RMUTT OFFICE/web/office-rmutt-gallery-04.jpg",
+      "images/featured/RMUTT OFFICE/web/office-rmutt-gallery-05.jpg"
+    ],
     tags: ["Office", "Marble feature", "Clean ceiling"],
     summary: "Modern office design with marble feature wall, clean ceiling detail and professional workspace planning.",
     highlight: "ออกแบบสำนักงานให้สะอาด เป็นมืออาชีพ และแบ่งพื้นที่ทำงานกับพื้นที่รับรองได้ชัดเจน"
@@ -93,7 +113,18 @@ window.portfolioProjects = [
     cover: "images/featured/office-khan-01.jpg",
     cardSize: "wide",
     cardImages: ["images/featured/office-khan-01.jpg", "images/featured/office-khan-02.jpg"],
-    images: ["images/featured/office-khan-01.jpg", "images/featured/office-khan-02.jpg"],
+    images: [
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-01.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-02.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-03.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-04.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-05.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-06.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-07.jpg",
+      "images/featured/OFFICE K.HAN/web/office-khan-gallery-08.jpg",
+      "images/featured/office-khan-01.jpg",
+      "images/featured/office-khan-02.jpg"
+    ],
     tags: ["Private office", "Meeting", "Warm modern"],
     summary: "Private office design with warm modern material palette, composed meeting zones and polished executive atmosphere.",
     highlight: "สร้างบรรยากาศสำนักงานส่วนตัวที่อบอุ่น เรียบร้อย และเหมาะกับทั้งการทำงานและการประชุม"
@@ -125,7 +156,73 @@ window.portfolioProjects = [
     cover: "images/featured/gallery-01.jpg",
     cardSize: "large",
     cardImages: ["images/featured/gallery-01.jpg", "images/featured/gallery-02.jpg", "images/featured/art-classroom-01.jpg"],
-    images: ["images/featured/gallery-01.jpg", "images/featured/gallery-02.jpg", "images/featured/art-classroom-01.jpg", "images/project4.jpg", "images/gallery/gallery1.png"],
+    images: [
+      "images/featured/gallery/web/gallery-art-01.jpg",
+      "images/featured/gallery/web/gallery-art-02.jpg",
+      "images/featured/gallery/web/gallery-art-03.jpg",
+      "images/featured/gallery/web/gallery-art-04.jpg",
+      "images/featured/gallery/web/gallery-art-05.jpg",
+      "images/featured/gallery/web/gallery-art-06.jpg",
+      "images/featured/gallery/web/gallery-art-07.jpg",
+      "images/featured/gallery/web/gallery-art-08.jpg",
+      "images/featured/gallery/web/gallery-art-09.jpg",
+      "images/featured/gallery/web/gallery-art-10.jpg",
+      "images/featured/gallery/web/gallery-art-11.jpg",
+      "images/featured/gallery/web/gallery-art-12.jpg"
+    ],
+    galleryGroups: [
+      {
+        title: "Gallery & Art Classroom",
+        images: [
+          "images/featured/gallery/web/gallery-art-01.jpg",
+          "images/featured/gallery/web/gallery-art-02.jpg",
+          "images/featured/gallery/web/gallery-art-03.jpg",
+          "images/featured/gallery/web/gallery-art-04.jpg",
+          "images/featured/gallery/web/gallery-art-05.jpg",
+          "images/featured/gallery/web/gallery-art-06.jpg",
+          "images/featured/gallery/web/gallery-art-07.jpg",
+          "images/featured/gallery/web/gallery-art-08.jpg",
+          "images/featured/gallery/web/gallery-art-09.jpg",
+          "images/featured/gallery/web/gallery-art-10.jpg",
+          "images/featured/gallery/web/gallery-art-11.jpg",
+          "images/featured/gallery/web/gallery-art-12.jpg"
+        ]
+      },
+      {
+        title: "Floor 6 Art Studio",
+        images: [
+          "images/featured/gallery/floor6/floor6-gallery-01.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-02.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-03.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-04.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-05.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-06.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-07.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-08.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-09.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-10.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-11.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-12.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-13.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-14.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-15.jpg",
+          "images/featured/gallery/floor6/floor6-gallery-16.jpg"
+        ]
+      }
+    ],
+    planUrl: "images/featured/gallery/gellery15.jpg",
+    pdfGroups: [
+      {
+        title: "Floor 6 Presentation",
+        files: [
+          {
+            title: "Art Faculty Floor 6 Presentation",
+            note: "Presentation PDF for RMUTT art classroom floor 6",
+            url: "ENTROPY/ART/FLOOR 6/pre  อาคาร4ชั้น6-ศิลปกรรม.pdf"
+          }
+        ]
+      }
+    ],
     tags: ["Gallery", "Classroom", "Track lighting"],
     summary: "Gallery, art classroom and hallway design with clean exhibition layout and track lighting system.",
     highlight: "ออกแบบพื้นที่แสดงงานและห้องเรียนศิลปะให้ดูโล่ง สว่าง และช่วยให้งานศิลป์เป็นจุดเด่น"
@@ -156,27 +253,10 @@ window.portfolioProjects = [
     scope: "Retail experience, display, lighting",
     cover: "images/featured/samsung-real-01.jpg",
     cardImages: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg"],
-    images: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg", "images/shop/samsung0.png", "images/shop/samsung1.png", "images/shop/samsung2.png", "images/shop/samsung3.png"],
+    images: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg", "images/shop/samsung0.webp", "images/shop/samsung1.webp", "images/shop/samsung2.webp", "images/shop/samsung3.webp"],
     tags: ["Retail display", "Customer flow", "Brand presence"],
     summary: "Retail experience design with product display, lighting strategy, customer flow and brand presence.",
     highlight: "ออกแบบพื้นที่ขายให้สินค้าดูเด่น ลูกค้าเดินชมได้สะดวก และสื่อภาพลักษณ์แบรนด์ได้ชัดเจน"
-  },
-  {
-    id: "mini-shop",
-    title: "Mini Shop",
-    category: "Retail",
-    location: "EDGE LABO",
-    role: "Interior Designer",
-    status: "Design & Visualization",
-    year: "2025",
-    scope: "Mini retail shop, counter design, display atmosphere",
-    cover: "images/featured/mini-shop-01.jpg",
-    cardSize: "wide",
-    cardImages: ["images/featured/mini-shop-01.jpg", "images/featured/mini-shop-02.jpg", "images/featured/mini-shop-03.jpg"],
-    images: ["images/featured/mini-shop-01.jpg", "images/featured/mini-shop-02.jpg", "images/featured/mini-shop-03.jpg"],
-    tags: ["Mini shop", "Display", "Compact retail"],
-    summary: "Compact mini shop visualization with strong storefront identity, layered display and controlled customer-facing details.",
-    highlight: "ออกแบบร้านขนาดเล็กให้ใช้พื้นที่คุ้มค่า เห็นสินค้าได้ชัด และมีภาพลักษณ์หน้าร้านที่จดจำง่าย"
   },
   {
     id: "little-garden",
@@ -202,8 +282,20 @@ window.portfolioProjects = [
     status: "Concept Design",
     year: "2024",
     scope: "Guest room, restaurant, spa, lounge, fitness",
-    cover: "images/hotel/Hotel0.jpg",
-    images: ["images/hotel/Hotel0.jpg", "images/hotel/Hotel1.jpg", "images/portfolio-pages/page-13.png"],
+    cover: "images/featured/hotel/Hotel0.jpg",
+    images: [
+      "images/featured/hotel/Hotel.jpg",
+      "images/featured/hotel/Hotel0.jpg",
+      "images/featured/hotel/Hotel4.jpg",
+      "images/featured/hotel/Hotel8.jpg",
+      "images/featured/hotel/Hotel1.jpg",
+      "images/featured/hotel/Hotel7.jpg",
+      "images/featured/hotel/Hotel2.jpg",
+      "images/featured/hotel/Hotel3.jpg",
+      "images/featured/hotel/Hotel6.jpg",
+      "images/featured/hotel/Hotel5.jpg",
+      "images/portfolio-pages/page-13.png"
+    ],
     tags: ["Guest room", "Amenity", "Hospitality program"],
     summary: "Hospitality design including guest room, restaurant, spa, lounge and fitness area.",
     highlight: "วางงานโรงแรมให้แต่ละฟังก์ชันมีเอกลักษณ์ แต่ยังเชื่อมกันด้วยบรรยากาศที่สงบและดูพรีเมียม"
@@ -217,14 +309,25 @@ window.portfolioProjects = [
     status: "Design",
     year: "2024",
     scope: "Restaurant presentation, dining atmosphere, material mood",
-    cover: "images/featured/zen-restaurant-02.jpg",
+    cover: "images/featured/restaurant/web/restaurant-hero.jpg",
     cardSize: "large",
-    cardImages: ["images/featured/zen-restaurant-02.jpg", "images/featured/zen-restaurant-03.jpg", "images/featured/zen-restaurant-04.jpg"],
-    images: ["images/featured/zen-restaurant-02.jpg", "images/featured/zen-restaurant-03.jpg", "images/featured/zen-restaurant-04.jpg", "images/featured/zen-restaurant-05.jpg", "images/featured/zen-restaurant-01.jpg", "images/portfolio-pages/page-14.png"],
+    cardImages: ["images/featured/restaurant/web/restaurant-gallery-01.jpg", "images/featured/restaurant/web/restaurant-gallery-02.jpg", "images/featured/restaurant/web/restaurant-gallery-05.jpg"],
+    images: [
+      "images/featured/restaurant/web/restaurant-gallery-01.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-02.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-03.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-04.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-05.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-06.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-07.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-08.jpg",
+      "images/featured/restaurant/web/restaurant-gallery-09.jpg",
+      "images/portfolio-pages/page-14.png"
+    ],
     tags: ["Restaurant", "Japanese mood", "Dining"],
     summary: "Japanese restaurant and Zen presentation combined into one hospitality project with dining atmosphere and warm material direction.",
     highlight: "ออกแบบร้านอาหารญี่ปุ่นให้เรียบ สงบ และใช้วัสดุอบอุ่นเพื่อสร้างจังหวะการนั่งทานที่ผ่อนคลาย",
-    galleryFit: true
+    galleryFit: false
   },
   {
     id: "one-bangkok-popup",
@@ -237,8 +340,8 @@ window.portfolioProjects = [
     scope: "Pop-up retail visualization, counter, storefront identity",
     cover: "images/featured/one-bangkok-01.jpg",
     cardSize: "large",
-    cardImages: ["images/featured/one-bangkok-01.jpg", "images/featured/waffle-sphere-01.jpg", "images/featured/popup-shop-01.jpg"],
-    images: ["images/featured/one-bangkok-01.jpg", "images/featured/one-bangkok-02.jpg", "images/featured/waffle-sphere-01.jpg", "images/featured/waffle-sphere-02.jpg", "images/featured/popup-shop-01.jpg", "images/featured/popup-shop-02.jpg", "images/featured/popup-shop-03.jpg", "images/portfolio-pages/page-15.png"],
+    cardImages: ["images/featured/one-bangkok-01.jpg", "images/featured/one-bangkok-02.jpg", "images/featured/popup-shop-01.jpg"],
+    images: ["images/featured/one-bangkok-01.jpg", "images/featured/one-bangkok-02.jpg", "images/featured/popup-shop-01.jpg", "images/featured/popup-shop-02.jpg", "images/featured/popup-shop-03.jpg", "images/featured/waffle-sphere-01.jpg", "images/featured/waffle-sphere-02.jpg", "images/portfolio-pages/page-15.png"],
     tags: ["Pop-up", "Food retail", "One Bangkok"],
     summary: "ONE BANGKOK and pop-up shop work combined into one retail project with compact service flow and storefront identity.",
     highlight: "ออกแบบป๊อปอัปช็อปให้จดจำง่าย ใช้พื้นที่กระชับ และทำให้หน้าร้านดึงดูดสายตาในเวลาเร็ว"
@@ -252,10 +355,27 @@ window.portfolioProjects = [
     status: "Design",
     year: "2025",
     scope: "Shared office, private office, reception",
-    cover: "images/portfolio-pages/page-16.png",
+    cover: "images/featured/office31/office-sukhumvit31-01.png",
     cardSize: "wide",
-    cardImages: ["images/portfolio-pages/page-16.png", "images/portfolio-pages/page-17.png", "images/portfolio-pages/page-18.png"],
-    images: ["images/portfolio-pages/page-16.png", "images/portfolio-pages/page-17.png", "images/portfolio-pages/page-18.png", "images/portfolio-pages/page-19.png"],
+    cardImages: ["images/featured/office31/office-sukhumvit31-01.png", "images/featured/office31/office-sukhumvit31-04.png", "images/featured/office31/office-sukhumvit31-02.png"],
+    images: ["images/featured/office31/office-sukhumvit31-01.png", "images/featured/office31/office-sukhumvit31-02.png", "images/featured/office31/office-sukhumvit31-03.png", "images/featured/office31/office-sukhumvit31-04.png", "images/featured/office31/office-sukhumvit31-05.png", "images/featured/office31/office-sukhumvit31-06.png", "images/portfolio-pages/page-16.png", "images/portfolio-pages/page-17.png", "images/portfolio-pages/page-18.png", "images/portfolio-pages/page-19.png"],
+    pdfGroups: [
+      {
+        title: "Office Sukhumvit 31 Files",
+        files: [
+          {
+            title: "Office Plan",
+            note: "Office Sukhumvit 31 plan file",
+            url: "File/31 OFFICE.pdf"
+          },
+          {
+            title: "Tive Design",
+            note: "Office Sukhumvit 31 presentation file",
+            url: "File/31 OFFICE - tive design.pdf"
+          }
+        ]
+      }
+    ],
     tags: ["Shared office", "Meeting", "Reception"],
     summary: "Shared office and private office planning for Sukhumvit 31, balancing polished reception, meeting and work zones.",
     highlight: "จัดลำดับพื้นที่ตั้งแต่ reception ถึง private office ให้ดูเรียบร้อย ทำงานสะดวก และรองรับการประชุมได้จริง"
@@ -270,10 +390,84 @@ window.portfolioProjects = [
     year: "2025",
     scope: "Restaurant planning, lighting mood",
     cover: "images/portfolio-pages/page-20.png",
-    images: ["images/portfolio-pages/page-20.png"],
+    images: [
+      "images/featured/33 raman/Scene 2_1.png",
+      "images/featured/33 raman/Scene 17.png",
+      "images/featured/33 raman/Scene 3.png",
+      "images/featured/33 raman/Scene 8.png",
+      "images/featured/33 raman/Scene 15.png",
+      "images/featured/33 raman/Image(4).png",
+      "images/featured/33 raman/Image.png",
+      "images/featured/33 raman/Scene 7.png",
+      "images/featured/33 raman/Scene 6.png",
+      "images/featured/33 raman/Scene 1_1.png",
+      "images/featured/33 raman/Scene 4.png",
+      "images/featured/33 raman/Scene 5.png",
+      "images/featured/33 raman/Image(7).png",
+      "images/featured/33 raman/Image(8).png",
+      "images/featured/33 raman/Image(9).png",
+      
+    ],
+    planUrl: "File/33 ramen/IA-00.pdf",
     tags: ["Ramen shop", "Compact planning", "Customer path"],
     summary: "Restaurant design for a ramen shop with compact planning, warm lighting and a clear customer path.",
     highlight: "ออกแบบร้านราเมนให้ใช้พื้นที่คุ้มค่า ทางเดินชัด และสร้างบรรยากาศอบอุ่นสำหรับการทานอาหารเร็ว"
+  },
+  {
+    id: "chikura-hanoi",
+    title: "Chikura hanoi",
+    category: "Hospitality",
+    location: "Hanoi",
+    role: "Interior Designer",
+    status: "Design",
+    year: "2025",
+    scope: "Restaurant planning, counter, facade and seating atmosphere",
+    cover: "images/featured/chikura hanoi/web/chikura-hanoi-01.jpg",
+    cardImages: [
+      "images/featured/chikura hanoi/web/chikura-hanoi-01.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-02.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-03.jpg"
+    ],
+    images: [
+      "images/featured/chikura hanoi/web/chikura-hanoi-01.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-02.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-03.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-04.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-05.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-06.jpg",
+      "images/featured/chikura hanoi/web/chikura-hanoi-07.jpg"
+    ],
+    planUrl: "File/chikura hanoi 25-4-4.pdf",
+    tags: ["Restaurant", "Counter", "Hanoi"],
+    summary: "Restaurant design for Chikura hanoi with compact facade identity, counter planning and warm dining atmosphere.",
+    highlight: "จัดภาพให้เริ่มจากหน้าร้านที่เห็น identity ชัด แล้วต่อด้วย facade, counter และมุมที่นั่งภายใน เพื่อเล่า flow ของร้านให้ดูต่อเนื่อง"
+  },
+  {
+    id: "tong-lor-bar",
+    title: "Tong Lor Bar",
+    category: "Hospitality",
+    location: "Thong Lor",
+    role: "Interior Designer",
+    status: "Design",
+    year: "2026",
+    scope: "Bar interior, counter, lounge seating and mood lighting",
+    cover: "images/featured/tong lor bar/web/tong-lor-bar-01.jpg",
+    cardImages: [
+      "images/featured/tong lor bar/web/tong-lor-bar-01.jpg",
+      "images/featured/tong lor bar/web/tong-lor-bar-02.jpg",
+      "images/featured/tong lor bar/web/tong-lor-bar-03.jpg"
+    ],
+    images: [
+      "images/featured/tong lor bar/web/tong-lor-bar-01.jpg",
+      "images/featured/tong lor bar/web/tong-lor-bar-02.jpg",
+      "images/featured/tong lor bar/web/tong-lor-bar-03.jpg",
+      "images/featured/tong lor bar/web/tong-lor-bar-04.jpg",
+      "images/featured/tong lor bar/web/tong-lor-bar-05.jpg"
+    ],
+    planUrl: "File/BAR_ Tong Lor-skp8.pdf",
+    tags: ["Bar", "Mood lighting", "Counter"],
+    summary: "Compact bar interior in Thong Lor with dark lounge atmosphere, illuminated artwork and a composed counter experience.",
+    highlight: "จัดภาพให้เริ่มจากมุม counter ที่เห็นบรรยากาศชัด แล้วต่อด้วยงานไฟ ชั้นวาง และมุมที่นั่ง เพื่อให้เห็น character ของบาร์ครบขึ้น"
   },
   {
     id: "rental-house",
@@ -284,10 +478,24 @@ window.portfolioProjects = [
     status: "Design",
     year: "2024",
     scope: "Residential interior, living area, bedroom and material mood",
-    cover: "images/featured/rental-house-01.jpg",
+    cover: "images/featured/Rental House/web/rental-house-gallery-01.jpg",
     cardSize: "wide",
-    cardImages: ["images/featured/rental-house-01.jpg", "images/featured/rental-house-02.jpg"],
-    images: ["images/featured/rental-house-01.jpg", "images/featured/rental-house-02.jpg", "images/featured/rental-house-03.jpg"],
+    cardImages: [
+      "images/featured/Rental House/web/rental-house-gallery-01.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-02.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-03.jpg"
+    ],
+    images: [
+      "images/featured/Rental House/web/rental-house-gallery-01.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-02.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-03.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-04.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-05.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-06.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-07.jpg",
+      "images/featured/Rental House/web/rental-house-gallery-08.jpg"
+    ],
+    planUrl: "ENTROPY/บ้านเช่า/บ้านเช่า.pdf",
     tags: ["House", "Rental living", "Warm interior"],
     summary: "Rental house interior visualization with warm living atmosphere, practical room planning and calm residential material palette.",
     highlight: "ออกแบบบ้านเช่าให้ดูอบอุ่น ดูแลง่าย และมีฟังก์ชันที่เหมาะกับการอยู่อาศัยจริง"
@@ -302,7 +510,29 @@ window.portfolioProjects = [
     year: "2025",
     scope: "Residential interior, storage, living zones",
     cover: "images/portfolio-pages/page-21.png",
-    images: ["images/portfolio-pages/page-21.png", "images/portfolio-pages/page-22.png"],
+    images: [
+      "images/featured/33condo/web/condo-sukhumvit33-01.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-02.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-03.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-04.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-05.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-06.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-07.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-08.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-09.jpg",
+      "images/featured/33condo/web/condo-sukhumvit33-10.jpg",
+      "images/featured/33condo/condo office/Scene 2.png",
+      "images/featured/33condo/condo office/Scene 5.png",
+      "images/featured/33condo/condo office/Scene 6.png",
+      "images/featured/33condo/condo office/Scene 7.png",
+      "images/featured/33condo/condo office/Scene 1.png",
+      "images/featured/33condo/condo office/Image(2).png",
+      "images/featured/33condo/condo office/Image.png",
+      "images/featured/33condo/condo office/Scene 12.png",
+      "images/portfolio-pages/page-21.png",
+      "images/portfolio-pages/page-22.png"
+    ],
+    planUrl: "File/33 condo/KURA LAYOUT 33.pdf",
     tags: ["Condo", "Storage", "Soft modern"],
     summary: "Residential interior design with soft modern detailing and practical living zones for a Bangkok condo.",
     highlight: "เน้นพื้นที่เก็บของ การใช้งานประจำวัน และรายละเอียดที่ทำให้คอนโดเมืองดูอบอุ่นแต่ยังดูแลง่าย"
@@ -318,6 +548,33 @@ window.portfolioProjects = [
     scope: "Residential concept, compact city living",
     cover: "images/portfolio-pages/page-23.png",
     images: ["images/portfolio-pages/page-23.png"],
+    galleryGroups: [
+      {
+        title: "Sukhumvit 24 - V1",
+        images: [
+          "images/featured/24 Condo/v1/Scene 2.png",
+          "images/featured/24 Condo/v1/Scene 3.png",
+          "images/featured/24 Condo/v1/Scene 6.png",
+          "images/featured/24 Condo/v1/Scene 1.png",
+          "images/featured/24 Condo/v1/Scene 5.png",
+          "images/featured/24 Condo/v1/Scene 7.png",
+          "images/featured/24 Condo/v1/Scene 8.png"
+        ]
+      },
+      {
+        title: "Sukhumvit 24 - V2",
+        images: [
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-28-59.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-33-41.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-37-17.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-39-49.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-40-44.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-42-36.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-36-11.png",
+          "images/featured/24 Condo/v2/Enscape_2025-09-02-16-44-21.png"
+        ]
+      }
+    ],
     tags: ["Condo", "Compact living", "Calm finishes"],
     summary: "Condo interior concept with refined storage, calm finishes and compact city-living functionality.",
     highlight: "ออกแบบคอนโดขนาดกะทัดรัดให้ใช้พื้นที่ได้คล่อง มีที่เก็บของแนบเนียน และบรรยากาศสงบ"
@@ -333,6 +590,7 @@ window.portfolioProjects = [
     scope: "Furniture visualization, material study",
     cover: "images/portfolio-pages/page-24.png",
     images: ["images/portfolio-pages/page-24.png", "images/portfolio-pages/page-27.png"],
+    pdfPageUrl: "aluminum-profile-pdfs.html",
     tags: ["Furniture", "Aluminum profile", "Material detail"],
     summary: "Aluminum profile furniture and retail visualization with detailed product expression and material-focused renderings.",
     highlight: "พัฒนาเฟอร์นิเจอร์และงาน display จาก aluminum profile ให้เห็นเส้นสาย วัสดุ และรายละเอียดการประกอบชัดเจน"

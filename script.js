@@ -1,5 +1,35 @@
 (function () {
-  const projects = window.portfolioProjects || [];
+  const projectOrder = [
+    "office-sukhumvit31",
+    "one-bangkok-popup",
+    "ramen-sukhumvit33",
+    "chikura-hanoi",
+    "tong-lor-bar",
+    "condo-sukhumvit33",
+    "condo-sukhumvit24",
+    "resort",
+    "hotel",
+    "zen-japanese-restaurant",
+    "pool-villa",
+    "office-khan",
+    "samsung-shop",
+    "rental-house",
+    "gallery-art",
+    "learning-center",
+    "office-rmutt",
+    "presidents-office",
+    "VIP RESIDENT ROOM",
+    "landscape-rmutt",
+    "aluminium-profile",
+    "ai-render",
+    "little-garden",
+    "logo-design"
+  ];
+  const projects = (window.portfolioProjects || []).slice().sort((a, b) => {
+    const aIndex = projectOrder.indexOf(a.id);
+    const bIndex = projectOrder.indexOf(b.id);
+    return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+  });
   const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
   function projectUrl(id) {
@@ -127,11 +157,30 @@
     const nextProject = projects[(index + 1) % projects.length];
     document.title = `${project.title} | Ratipong Kaewjaijong`;
 
-    const gallery = project.images.map((image, imageIndex) => `
-      <button class="gallery-tile" type="button" data-image="${image}">
-        <img src="${image}" alt="${project.title} image ${imageIndex + 1}" loading="lazy">
-      </button>
-    `);
+    const galleryGroups = project.galleryGroups?.length
+      ? project.galleryGroups
+      : [{ title: "", images: project.images || [] }];
+    const gallery = galleryGroups.flatMap((group, groupIndex) => [
+      group.title ? `<div class="gallery-group-title">${group.title}</div>` : "",
+      ...(group.images || []).map((image, imageIndex) => `
+        <button class="gallery-tile" type="button" data-image="${image}">
+          <img src="${image}" alt="${project.title} image ${groupIndex + 1}-${imageIndex + 1}" loading="lazy">
+        </button>
+      `)
+    ]).filter(Boolean);
+    const pdfGroups = project.pdfGroups || [];
+    const pdfDocuments = pdfGroups.flatMap((group) => [
+      group.title ? `<div class="pdf-group-title">${group.title}</div>` : "",
+      ...(group.files || []).map((file) => `
+        <a class="pdf-card" href="${file.url}" target="_blank" rel="noopener">
+          <span>PDF</span>
+          <strong>${file.title}</strong>
+          ${file.note ? `<small>${file.note}</small>` : ""}
+        </a>
+      `)
+    ]).filter(Boolean);
+    const pdfButtonUrl = project.pdfPageUrl || (pdfDocuments.length ? "#documents" : project.planUrl || "");
+    const pdfButtonTarget = project.pdfPageUrl || pdfDocuments.length ? "" : ` target="_blank" rel="noopener"`;
 
     root.innerHTML = `
       <section class="detail-hero">
@@ -144,6 +193,7 @@
           </ul>
           <div class="hero-actions">
             <a class="button primary dark-button" href="projects.html">All Projects</a>
+            ${pdfButtonUrl ? `<a class="button quiet dark" href="${pdfButtonUrl}"${pdfButtonTarget}>View PDF</a>` : ""}
             <a class="button quiet dark" href="#gallery">View Gallery</a>
           </div>
         </div>
@@ -190,6 +240,20 @@
           </dl>
         </div>
       </section>
+
+      ${pdfDocuments.length ? `
+        <section class="document-section" id="documents">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">PDF Documents</p>
+              <h2>Open project files</h2>
+            </div>
+          </div>
+          <div class="pdf-grid">
+            ${pdfDocuments.join("")}
+          </div>
+        </section>
+      ` : ""}
 
       <section class="gallery-section" id="gallery">
         <div class="section-heading">
