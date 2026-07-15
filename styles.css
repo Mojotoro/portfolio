@@ -226,7 +226,7 @@ textarea {
 
 .hero-media img {
   position: absolute;
-  right: clamp(-120px, -5vw, -42px);
+  right: clamp(-72px, -2.5vw, -12px);
   bottom: -8vh;
   z-index: 1;
   width: auto;
@@ -1385,7 +1385,7 @@ section {
     padding-inline: 18px;
   }
   .hero-media img {
-    right: -42vw;
+    right: -34vw;
     bottom: -5vh;
     width: auto;
     height: 108%;
