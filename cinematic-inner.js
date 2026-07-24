@@ -1,1 +1,23 @@
-import{gsap}from"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";import{ScrollTrigger}from"https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js";import Lenis from"https://cdn.jsdelivr.net/npm/lenis@1.1.13/+esm";gsap.registerPlugin(ScrollTrigger);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){const l=new Lenis({duration:1.2,smoothWheel:true});l.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>l.raf(t*1e3));gsap.ticker.lagSmoothing(0);gsap.from(".page-hero>*",{y:70,opacity:0,duration:1.3,stagger:.1,ease:"expo.out"});gsap.from(".detail-hero-copy>*",{y:55,opacity:0,duration:1.2,stagger:.08,ease:"expo.out"});gsap.from(".detail-hero-media",{scale:1.06,opacity:0,duration:1.6,ease:"expo.out"});requestAnimationFrame(()=>gsap.utils.toArray(".portfolio-card,.gallery-tile,.pdf-card").forEach(e=>gsap.from(e,{y:70,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:e,start:"top 90%"}})))}
+import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
+import { ScrollTrigger } from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js";
+
+gsap.registerPlugin(ScrollTrigger);
+
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  gsap.ticker.lagSmoothing(0);
+  window.addEventListener("scroll", () => ScrollTrigger.update(), { passive: true });
+  gsap.from(".page-hero>*", { y: 70, opacity: 0, duration: 1.0, stagger: 0.08, ease: "expo.out" });
+  gsap.from(".detail-hero-copy>*", { y: 55, opacity: 0, duration: 0.95, stagger: 0.06, ease: "expo.out" });
+  gsap.from(".detail-hero-media", { scale: 1.03, opacity: 0, duration: 1.15, ease: "expo.out" });
+  requestAnimationFrame(() => {
+    gsap.utils.toArray(".portfolio-card,.gallery-tile,.pdf-card").forEach((element) => {
+      gsap.from(element, {
+        y: 46,
+        opacity: 0,
+        duration: 0.65,
+        ease: "power3.out",
+        scrollTrigger: { trigger: element, start: "top 92%" },
+      });
+    });
+  });
+}
