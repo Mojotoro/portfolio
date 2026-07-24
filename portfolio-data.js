@@ -150,7 +150,7 @@ window.portfolioProjects = [
     category: "Education",
     location: "RMUTT",
     role: "Interior Designer",
-    status: "Construction",
+    status: "Renovation Design",
     year: "2024",
     scope: "Renovation, exhibition layout, lighting",
     cover: "images/featured/gallery-01.jpg",
@@ -253,7 +253,7 @@ window.portfolioProjects = [
     scope: "Retail experience, display, lighting",
     cover: "images/featured/samsung-real-01.jpg",
     cardImages: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg"],
-    images: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg", "images/shop/samsung0.webp", "images/shop/samsung1.webp", "images/shop/samsung2.webp", "images/shop/samsung3.webp"],
+    images: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg", "images/shop/samsung0.png", "images/shop/samsung1.png", "images/shop/samsung2.png", "images/shop/samsung3.png"],
     tags: ["Retail display", "Customer flow", "Brand presence"],
     summary: "Retail experience design with product display, lighting strategy, customer flow and brand presence.",
     highlight: "ออกแบบพื้นที่ขายให้สินค้าดูเด่น ลูกค้าเดินชมได้สะดวก และสื่อภาพลักษณ์แบรนด์ได้ชัดเจน"
@@ -335,7 +335,7 @@ window.portfolioProjects = [
     category: "Retail",
     location: "One Bangkok",
     role: "Interior Designer",
-    status: "Finish",
+    status: "Design & Visualization",
     year: "2025",
     scope: "Pop-up retail visualization, counter, storefront identity",
     cover: "images/featured/one-bangkok-01.jpg",
@@ -352,7 +352,7 @@ window.portfolioProjects = [
     category: "Workplace",
     location: "Sukhumvit 31",
     role: "Interior Designer",
-    status: "Finish",
+    status: "Design",
     year: "2025",
     scope: "Shared office, private office, reception",
     cover: "images/featured/office31/office-sukhumvit31-01.png",
@@ -386,7 +386,7 @@ window.portfolioProjects = [
     category: "Hospitality",
     location: "Sukhumvit 33",
     role: "Interior Designer",
-    status: "Finish",
+    status: "Design",
     year: "2025",
     scope: "Restaurant planning, lighting mood",
     cover: "images/portfolio-pages/page-20.png",
@@ -448,7 +448,7 @@ window.portfolioProjects = [
     category: "Hospitality",
     location: "Thong Lor",
     role: "Interior Designer",
-    status: "Finish",
+    status: "Design",
     year: "2026",
     scope: "Bar interior, counter, lounge seating and mood lighting",
     cover: "images/featured/tong lor bar/web/tong-lor-bar-01.jpg",
@@ -543,7 +543,7 @@ window.portfolioProjects = [
     category: "Residential",
     location: "Sukhumvit 24",
     role: "Interior Designer",
-    status: "Construction",
+    status: "Design",
     year: "2025",
     scope: "Residential concept, compact city living",
     cover: "images/portfolio-pages/page-23.png",
@@ -601,7 +601,7 @@ window.portfolioProjects = [
     category: "Visualization",
     location: "Raminthra",
     role: "Interior Designer",
-    status: "Construction",
+    status: "AI Visualization",
     year: "2025",
     scope: "AI-assisted atmosphere study",
     cover: "images/portfolio-pages/page-25.png",
@@ -625,5 +625,42 @@ window.portfolioProjects = [
     summary: "Logo exploration and visual identity work for brand presentation.",
     highlight: "ออกแบบโลโก้และภาพลักษณ์ให้จดจำง่าย ใช้ต่อในงานนำเสนอและการสื่อสารแบรนด์ได้ชัดเจน",
     galleryFit: true
+  },
+  {
+    id: "web-program-lab",
+    title: "Cream Report Portable",
+    category: "Digital",
+    location: "Portable App",
+    role: "Designer / Developer",
+    status: "v1.0.0",
+    year: "2026",
+    scope: "Portable reporting application, dashboard UI and downloadable package",
+    cover: "images/digital/cream-report-profile-1080.png",
+    cardSize: "wide",
+    cardImages: [
+      "images/digital/cream-report-profile-1080.png",
+      "images/digital/cream-report-profile-recording.png",
+      "images/digital/cream-report-profile-report.png"
+    ],
+    images: [
+      "images/digital/cream-report-profile-1080.png",
+      "images/digital/cream-report-profile-recording.png",
+      "images/digital/cream-report-profile-report.png",
+      "images/digital/cream-report-profile-upload.png",
+      "images/digital/cream-report-usage-welcome.png",
+      "images/digital/cream-report-usage-workspace.png",
+      "images/digital/cream-report-usage-report.png",
+      "images/digital/cream-report-usage-upload.png"
+    ],
+    tags: ["Portable app", "Dashboard", "Report tool"],
+    summary: "A portable reporting application package for future web, program and digital tool work. This page collects downloadable builds, screenshots and release notes as the project develops.",
+    highlight: "???????????????????? ??????? ??????????????????????????? ????????????????????????????????????????",
+    downloads: [
+      {
+        label: "Cream Report Portable v1.0.0",
+        file: "files/Cream-Report-Portable-v1.0.0.zip",
+        meta: "ZIP package"
+      }
+    ]
   }
 ];
