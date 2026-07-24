@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cinematic-inner.css">
+  <link rel="stylesheet" href="levels.css">
 </head>
 <body>
   <header class="site-header solid" data-header>
@@ -31,6 +33,11 @@
   </header>
 
   <main id="projectRoot"></main>
+  <section class="detail-categories" aria-label="Project collections">
+    <p>EXPLORE THE ARCHIVE</p><h2>More <em>Collections</em></h2>
+    <div><a href="projects.html?category=Hospitality"><small>01</small>Hospitality</a><a href="projects.html?category=Workplace"><small>02</small>Workplace</a><a href="projects.html?category=Education"><small>03</small>Education</a><a href="projects.html?category=Retail"><small>04</small>Retail</a><a href="projects.html?category=Residential"><small>05</small>Residential</a><a href="projects.html?category=Visualization"><small>06</small>Visualization</a><a href="projects.html?category=Digital"><small>07</small>Digital</a></div>
+  </section>
+  <style>.detail-categories{padding:12vh 7vw;background:#d8cfbe;color:#1b1711}.detail-categories>p{font-size:9px;letter-spacing:.22em}.detail-categories h2{margin:12px 0 7vh;font:400 clamp(48px,7vw,110px)/.9 "Bodoni Moda",serif;letter-spacing:-.05em}.detail-categories h2 em{color:#5b171d;font-weight:400}.detail-categories>div{border-top:1px solid #1b171144}.detail-categories a{display:grid;grid-template-columns:70px 1fr;align-items:center;min-height:92px;border-bottom:1px solid #1b171144;color:inherit;font:400 clamp(28px,4vw,58px) "Bodoni Moda",serif;text-decoration:none;transition:.3s}.detail-categories a small{font:9px "Noto Sans Thai",sans-serif;color:#6e6558}.detail-categories a:hover{padding-left:20px;color:#5b171d;font-style:italic}@media(max-width:640px){.detail-categories{padding:10vh 20px}.detail-categories a{grid-template-columns:45px 1fr;min-height:74px}}</style>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Close image">×</button>
@@ -44,5 +51,6 @@
 
   <script src="portfolio-data.js?v=45d9776"></script>
   <script src="script.js"></script>
+  <script type="module" src="cinematic-inner.js"></script>
 </body>
 </html>

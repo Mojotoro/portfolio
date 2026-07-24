@@ -37,6 +37,9 @@
       status: "Status",
       viewGallery: "View Gallery",
       viewPdf: "View PDF",
+      download: "Download",
+      downloadZip: "Download ZIP",
+      projectFiles: "Project files",
       work: "Work",
       year: "Year"
     },
@@ -128,7 +131,8 @@
     "aluminium-profile",
     "ai-render",
     "little-garden",
-    "logo-design"
+    "logo-design",
+    "web-program-lab"
   ];
   const projects = (window.portfolioProjects || []).slice().sort((a, b) => {
     const aIndex = projectOrder.indexOf(a.id);
@@ -582,6 +586,11 @@
         setCount(visibleCards, filter);
       });
     });
+
+    const requestedCategory = new URLSearchParams(window.location.search).get("category");
+    if (requestedCategory) {
+      document.querySelector(`.filter-chip[data-filter="${requestedCategory}"]`)?.click();
+    }
   }
 
   function renderProjectDetail() {
@@ -630,6 +639,28 @@
         </a>
       `)
     ]).filter(Boolean);
+    const downloads = (project.downloads || []).map((item) => `
+      <a class="download-card" href="${item.file}" download>
+        <span>${item.meta || t("download")}</span>
+        <strong>${item.label}</strong>
+      </a>
+    `);
+    const downloadButton = project.downloads?.length
+      ? `<a class="button quiet dark" href="${project.downloads[0].file}" download>${t("downloadZip")}</a>`
+      : "";
+    const downloadsSection = downloads.length ? `
+      <section class="downloads-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">${t("download")}</p>
+            <h2>${t("projectFiles")}</h2>
+          </div>
+        </div>
+        <div class="download-grid">
+          ${downloads.join("")}
+        </div>
+      </section>
+    ` : "";
     const pdfButtonUrl = project.pdfPageUrl || (pdfDocuments.length ? "#documents" : project.planUrl || "");
     const pdfButtonTarget = project.pdfPageUrl || pdfDocuments.length ? "" : ` target="_blank" rel="noopener"`;
 
@@ -646,6 +677,7 @@
             <a class="button primary dark-button" href="projects.html">${t("allProjects")}</a>
             ${pdfButtonUrl ? `<a class="button quiet dark" href="${pdfButtonUrl}"${pdfButtonTarget}>${t("viewPdf")}</a>` : ""}
             <a class="button quiet dark" href="#gallery">${t("viewGallery")}</a>
+            ${downloadButton}
           </div>
         </div>
         <div class="detail-hero-media">
@@ -705,6 +737,8 @@
           </div>
         </section>
       ` : ""}
+
+      ${downloadsSection}
 
       <section class="gallery-section" id="gallery">
         <div class="section-heading">
