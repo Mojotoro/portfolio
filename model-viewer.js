@@ -80,7 +80,7 @@ if (stage) {
     const convert = (point) => new THREE.Vector3(point[0] * scale, point[2] * scale, -point[1] * scale).sub(modelCenter);
     camera.position.copy(convert(item.eye));
     controls.target.copy(convert(item.target));
-    camera.up.set(item.up[0], item.up[2], -item.up[1]).normalize();
+    camera.up.set(0, 1, 0);
     camera.fov = Number(item.fov) || 35;
     camera.updateProjectionMatrix();
     let clippingPlanes = [];
