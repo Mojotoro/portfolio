@@ -36,7 +36,9 @@ if (stage) {
   controls.enableDamping = true;
   controls.dampingFactor = 0.07;
   controls.autoRotateSpeed = 0.7;
-  controls.enablePan = false;
+  controls.enablePan = true;
+  controls.screenSpacePanning = true;
+  controls.zoomToCursor = true;
 
   function updateProgress(event) {
     const expectedBytes = Number(stage.dataset.modelBytes) || 0;
@@ -61,8 +63,8 @@ if (stage) {
     camera.far = distance * 20;
     camera.updateProjectionMatrix();
     controls.target.set(0, 0, 0);
-    controls.minDistance = maxSize * 0.45;
-    controls.maxDistance = maxSize * 3;
+    controls.minDistance = maxSize * 0.015;
+    controls.maxDistance = maxSize * 5;
     controls.update();
   }
 
