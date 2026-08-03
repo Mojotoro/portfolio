@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 const stage = document.querySelector("[data-model-viewer]");
@@ -64,29 +65,35 @@ if (stage) {
     controls.update();
   }
 
-  const materialLoader = new MTLLoader();
-  materialLoader.load(stage.dataset.mtl, (materials) => {
+  function prepareModel(object) {
+    object.traverse((child) => {
+      if (!child.isMesh) return;
+      child.castShadow = false;
+      child.receiveShadow = false;
+      const list = Array.isArray(child.material) ? child.material : [child.material];
+      list.forEach((material) => {
+        material.side = THREE.DoubleSide;
+        if (material.map) material.map.colorSpace = THREE.SRGBColorSpace;
+      });
+    });
+    modelRoot.add(object);
+    frameModel(modelRoot);
+    progress.textContent = "100%";
+    loading.classList.add("is-done");
+    stage.classList.add("is-ready");
+  }
+
+  if (stage.dataset.glb) {
+    new GLTFLoader().load(stage.dataset.glb, (gltf) => prepareModel(gltf.scene), updateProgress, showError);
+  } else {
+    const materialLoader = new MTLLoader();
+    materialLoader.load(stage.dataset.mtl, (materials) => {
     materials.preload();
     const objectLoader = new OBJLoader();
     objectLoader.setMaterials(materials);
-    objectLoader.load(stage.dataset.obj, (object) => {
-      object.traverse((child) => {
-        if (!child.isMesh) return;
-        child.castShadow = false;
-        child.receiveShadow = false;
-        const list = Array.isArray(child.material) ? child.material : [child.material];
-        list.forEach((material) => {
-          material.side = THREE.DoubleSide;
-          if (material.map) material.map.colorSpace = THREE.SRGBColorSpace;
-        });
-      });
-      modelRoot.add(object);
-      frameModel(modelRoot);
-      progress.textContent = "100%";
-      loading.classList.add("is-done");
-      stage.classList.add("is-ready");
+    objectLoader.load(stage.dataset.obj, prepareModel, updateProgress, showError);
     }, updateProgress, showError);
-  }, updateProgress, showError);
+  }
 
   function showError(error) {
     console.error("3D model failed to load", error);

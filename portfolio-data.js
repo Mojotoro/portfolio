@@ -536,6 +536,10 @@ window.portfolioProjects = [
       "images/portfolio-pages/page-21.png",
       "images/portfolio-pages/page-22.png"
     ],
+    model3d: {
+      glb: "models/condo-sukhumvit33/condo-sukhumvit33.glb",
+      bytes: 21328020
+    },
     planUrl: "File/33 condo/KURA LAYOUT 33.pdf",
     tags: ["Condo", "Storage", "Soft modern"],
     summary: "Residential interior design with soft modern detailing and practical living zones for a Bangkok condo.",

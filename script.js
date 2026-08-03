@@ -733,7 +733,7 @@
             </div>
             <p>ลากเพื่อหมุน · เลื่อนเพื่อซูม · คลิกสองครั้งเพื่อเปิดหรือหยุดการหมุนอัตโนมัติ</p>
           </div>
-          <div class="model-stage" data-model-viewer data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}" data-model-bytes="21071749">
+          <div class="model-stage" data-model-viewer ${project.model3d.glb ? `data-glb="${project.model3d.glb}"` : `data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}"`} data-model-bytes="${project.model3d.bytes || 0}">
             <canvas aria-label="โมเดลสามมิติ ONE BANGKOK Pop-up Shop"></canvas>
             <div class="model-loading" role="status" aria-live="polite">
               <span></span>
