@@ -666,6 +666,9 @@
 
     root.innerHTML = `
       <section class="detail-hero">
+        <div class="detail-hero-media">
+          <img src="${project.cover}" alt="${project.title}">
+        </div>
         <div class="detail-hero-copy">
           <p class="eyebrow">${label("category", project.category)}</p>
           <h1>${project.title}</h1>
@@ -679,9 +682,6 @@
             <a class="button quiet dark" href="#gallery">${t("viewGallery")}</a>
             ${downloadButton}
           </div>
-        </div>
-        <div class="detail-hero-media">
-          <img src="${project.cover}" alt="${project.title}">
         </div>
       </section>
 
@@ -723,6 +723,38 @@
           </dl>
         </div>
       </section>
+
+      ${project.model3d ? `
+        <section class="model-section" id="model3d">
+          <div class="model-heading">
+            <div>
+              <p class="eyebrow">Interactive 3D</p>
+              <h2>Explore the space</h2>
+            </div>
+            <p>ลากเพื่อหมุน · เลื่อนเพื่อซูม · คลิกสองครั้งเพื่อเปิดหรือหยุดการหมุนอัตโนมัติ</p>
+          </div>
+          <div class="model-stage" data-model-viewer data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}" data-model-bytes="21071749">
+            <canvas aria-label="โมเดลสามมิติ ONE BANGKOK Pop-up Shop"></canvas>
+            <div class="model-loading" role="status" aria-live="polite">
+              <span></span>
+              <strong>กำลังโหลดโมเดล 3D</strong>
+              <small data-model-progress>0%</small>
+            </div>
+            <div class="model-hint" aria-hidden="true">ลากเพื่อหมุน&nbsp;&nbsp;·&nbsp;&nbsp;เลื่อนเพื่อซูม</div>
+          </div>
+          <script>
+            window.setTimeout(function () {
+              var stage = document.querySelector('[data-model-viewer]');
+              if (!stage || stage.classList.contains('is-ready') || window.__modelViewerStarted) return;
+              var box = stage.querySelector('.model-loading');
+              if (!box) return;
+              box.classList.add('has-error');
+              box.querySelector('strong').textContent = 'ตัวแสดงผล 3D เริ่มทำงานไม่ได้';
+              box.querySelector('small').textContent = 'กรุณาเปิดหน้านี้ผ่านเว็บเซิร์ฟเวอร์และตรวจสอบอินเทอร์เน็ต';
+            }, 8000);
+          <\/script>
+        </section>
+      ` : ""}
 
       ${pdfDocuments.length ? `
         <section class="document-section" id="documents">
