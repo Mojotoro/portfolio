@@ -16,19 +16,20 @@ if (stage) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const controls = new OrbitControls(camera, canvas);
   const modelRoot = new THREE.Group();
+  const neutralLighting = Boolean(stage.dataset.glb);
   let autoRotate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.15;
+  renderer.toneMappingExposure = neutralLighting ? 1.4 : 1.15;
   scene.add(modelRoot);
-  scene.add(new THREE.HemisphereLight(0xfff7ed, 0x6f6257, 2.8));
+  scene.add(new THREE.HemisphereLight(neutralLighting ? 0xffffff : 0xfff7ed, neutralLighting ? 0x8f8b85 : 0x6f6257, neutralLighting ? 3.6 : 2.8));
 
-  const key = new THREE.DirectionalLight(0xffffff, 3.2);
+  const key = new THREE.DirectionalLight(0xffffff, neutralLighting ? 4.2 : 3.2);
   key.position.set(4, 7, 5);
   scene.add(key);
-  const fill = new THREE.DirectionalLight(0xe79a54, 1.4);
+  const fill = new THREE.DirectionalLight(neutralLighting ? 0xffffff : 0xe79a54, neutralLighting ? 2.1 : 1.4);
   fill.position.set(-5, 2, -3);
   scene.add(fill);
 
