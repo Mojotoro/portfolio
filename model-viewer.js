@@ -19,11 +19,13 @@ if (stage) {
   const neutralLighting = Boolean(stage.dataset.glb);
   const modelScenes = stage.dataset.modelScenes ? JSON.parse(decodeURIComponent(stage.dataset.modelScenes)) : [];
   let modelCenter = new THREE.Vector3();
+  const modelMaterials = new Set();
   let autoRotate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.localClippingEnabled = true;
   renderer.toneMappingExposure = neutralLighting ? 1.4 : 1.15;
   scene.add(modelRoot);
   scene.add(new THREE.HemisphereLight(neutralLighting ? 0xffffff : 0xfff7ed, neutralLighting ? 0x8f8b85 : 0x6f6257, neutralLighting ? 3.6 : 2.8));
@@ -81,6 +83,16 @@ if (stage) {
     camera.up.set(item.up[0], item.up[2], -item.up[1]).normalize();
     camera.fov = Number(item.fov) || 35;
     camera.updateProjectionMatrix();
+    let clippingPlanes = [];
+    if (item.section) {
+      const point = convert(item.section.point);
+      const normal = new THREE.Vector3(item.section.normal[0], item.section.normal[2], -item.section.normal[1]).normalize();
+      clippingPlanes = [new THREE.Plane().setFromNormalAndCoplanarPoint(normal, point)];
+    }
+    modelMaterials.forEach((material) => {
+      material.clippingPlanes = clippingPlanes;
+      material.needsUpdate = true;
+    });
     controls.update();
     autoRotate = false;
     stage.querySelectorAll("[data-model-scene]").forEach((button, buttonIndex) => button.classList.toggle("is-active", buttonIndex === index));
@@ -97,6 +109,7 @@ if (stage) {
       child.receiveShadow = false;
       const list = Array.isArray(child.material) ? child.material : [child.material];
       list.forEach((material) => {
+        modelMaterials.add(material);
         material.side = THREE.DoubleSide;
         if (material.map) material.map.colorSpace = THREE.SRGBColorSpace;
       });
