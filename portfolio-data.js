@@ -639,10 +639,23 @@ window.portfolioProjects = [
     status: "v1.0.0",
     year: "2026",
     scope: "Portable reporting application, dashboard UI and downloadable package",
-    cover: "images/digital/cream-report-cover.png",
+    cover: "images/digital/cream-report-profile-1080.png",
     cardSize: "wide",
-    cardImages: ["images/digital/cream-report-cover.png"],
-    images: ["images/digital/cream-report-cover.png"],
+    cardImages: [
+      "images/digital/cream-report-profile-1080.png",
+      "images/digital/cream-report-profile-recording.png",
+      "images/digital/cream-report-profile-report.png"
+    ],
+    images: [
+      "images/digital/cream-report-profile-1080.png",
+      "images/digital/cream-report-profile-recording.png",
+      "images/digital/cream-report-profile-report.png",
+      "images/digital/cream-report-profile-upload.png",
+      "images/digital/cream-report-usage-welcome.png",
+      "images/digital/cream-report-usage-workspace.png",
+      "images/digital/cream-report-usage-report.png",
+      "images/digital/cream-report-usage-upload.png"
+    ],
     tags: ["Portable app", "Dashboard", "Report tool"],
     summary: "A portable reporting application package for future web, program and digital tool work. This page collects downloadable builds, screenshots and release notes as the project develops.",
     highlight: "???????????????????? ??????? ??????????????????????????? ????????????????????????????????????????",
