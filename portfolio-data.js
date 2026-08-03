@@ -342,6 +342,10 @@ window.portfolioProjects = [
     cardSize: "large",
     cardImages: ["images/featured/one-bangkok-01.jpg", "images/featured/one-bangkok-02.jpg", "images/featured/popup-shop-01.jpg"],
     images: ["images/featured/one-bangkok-01.jpg", "images/featured/one-bangkok-02.jpg", "images/featured/popup-shop-01.jpg", "images/featured/popup-shop-02.jpg", "images/featured/popup-shop-03.jpg", "images/featured/waffle-sphere-01.jpg", "images/featured/waffle-sphere-02.jpg", "images/portfolio-pages/page-15.png"],
+    model3d: {
+      obj: "models/one-bangkok/one-bangkok-popup.obj",
+      mtl: "models/one-bangkok/one-bangkok-popup.mtl"
+    },
     tags: ["Pop-up", "Food retail", "One Bangkok"],
     summary: "ONE BANGKOK and pop-up shop work combined into one retail project with compact service flow and storefront identity.",
     highlight: "ออกแบบป๊อปอัปช็อปให้จดจำง่าย ใช้พื้นที่กระชับ และทำให้หน้าร้านดึงดูดสายตาในเวลาเร็ว"
@@ -635,23 +639,10 @@ window.portfolioProjects = [
     status: "v1.0.0",
     year: "2026",
     scope: "Portable reporting application, dashboard UI and downloadable package",
-    cover: "images/digital/cream-report-profile-1080.png",
+    cover: "images/digital/cream-report-cover.png",
     cardSize: "wide",
-    cardImages: [
-      "images/digital/cream-report-profile-1080.png",
-      "images/digital/cream-report-profile-recording.png",
-      "images/digital/cream-report-profile-report.png"
-    ],
-    images: [
-      "images/digital/cream-report-profile-1080.png",
-      "images/digital/cream-report-profile-recording.png",
-      "images/digital/cream-report-profile-report.png",
-      "images/digital/cream-report-profile-upload.png",
-      "images/digital/cream-report-usage-welcome.png",
-      "images/digital/cream-report-usage-workspace.png",
-      "images/digital/cream-report-usage-report.png",
-      "images/digital/cream-report-usage-upload.png"
-    ],
+    cardImages: ["images/digital/cream-report-cover.png"],
+    images: ["images/digital/cream-report-cover.png"],
     tags: ["Portable app", "Dashboard", "Report tool"],
     summary: "A portable reporting application package for future web, program and digital tool work. This page collects downloadable builds, screenshots and release notes as the project develops.",
     highlight: "???????????????????? ??????? ??????????????????????????? ????????????????????????????????????????",
