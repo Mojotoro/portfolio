@@ -538,7 +538,7 @@ window.portfolioProjects = [
     ],
     model3d: {
       glb: "models/condo-sukhumvit33/condo-sukhumvit33.glb",
-      bytes: 65847900
+      bytes: 65848476
     },
     planUrl: "File/33 condo/KURA LAYOUT 33.pdf",
     tags: ["Condo", "Storage", "Soft modern"],
