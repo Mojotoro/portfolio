@@ -60,6 +60,14 @@ body:has(#projectRoot) .model-loading.is-done{visibility:hidden;opacity:0}
 body:has(#projectRoot) .model-loading.has-error span{display:none}
 body:has(#projectRoot) .model-hint{position:absolute;left:50%;bottom:18px;opacity:0;transform:translate(-50%,10px);padding:10px 15px;border:1px solid #ffffff25;border-radius:99px;background:#1a1008b8;color:#fff;font-size:9px;letter-spacing:.08em;backdrop-filter:blur(12px);transition:.5s}
 body:has(#projectRoot) .model-stage.is-ready .model-hint{opacity:1;transform:translate(-50%,0)}
+body:has(#projectRoot) .model-scenes{position:absolute;z-index:3;top:18px;left:18px;display:flex;gap:7px;opacity:0;transform:translateY(-8px);transition:.45s}
+body:has(#projectRoot) .model-stage.is-ready .model-scenes{opacity:1;transform:none}
+body:has(#projectRoot) .model-scenes button{padding:9px 14px;border:1px solid #ffffff32;border-radius:99px;background:#170d07c9;color:#fff;font:600 10px "Noto Sans Thai",sans-serif;letter-spacing:.04em;cursor:pointer;backdrop-filter:blur(12px);transition:.25s}
+body:has(#projectRoot) .model-scenes button:hover,body:has(#projectRoot) .model-scenes button.is-active{border-color:#dc884d;background:#dc884d;color:#1a0e07}
+body:has(#projectRoot) .model-scenes{position:absolute;z-index:3;top:18px;left:18px;display:flex;gap:7px;opacity:0;transform:translateY(-8px);transition:.45s}
+body:has(#projectRoot) .model-stage.is-ready .model-scenes{opacity:1;transform:none}
+body:has(#projectRoot) .model-scenes button{padding:9px 14px;border:1px solid #ffffff32;border-radius:99px;background:#170d07c9;color:#fff;font:600 10px "Noto Sans Thai",sans-serif;letter-spacing:.04em;cursor:pointer;backdrop-filter:blur(12px);transition:.25s}
+body:has(#projectRoot) .model-scenes button:hover,body:has(#projectRoot) .model-scenes button.is-active{border-color:#dc884d;background:#dc884d;color:#1a0e07}
 @keyframes model-spin{to{transform:rotate(360deg)}}
 body:has(#projectRoot) .project-next a:not(.button),body:has(#projectRoot) .detail-categories h2,body:has(#projectRoot) .detail-categories a{font-family:"Inter","Noto Sans Thai",sans-serif}
 body:has(#projectRoot) .project-next{background:var(--detail-dark)}

@@ -733,13 +733,14 @@
             </div>
             <p>ลากเพื่อหมุน · เลื่อนเพื่อซูม · คลิกสองครั้งเพื่อเปิดหรือหยุดการหมุนอัตโนมัติ</p>
           </div>
-          <div class="model-stage" data-model-viewer ${project.model3d.glb ? `data-glb="${project.model3d.glb}"` : `data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}"`} data-model-bytes="${project.model3d.bytes || 0}">
+          <div class="model-stage" data-model-viewer ${project.model3d.glb ? `data-glb="${project.model3d.glb}"` : `data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}"`} data-model-bytes="${project.model3d.bytes || 0}" ${project.model3d.scenes ? `data-model-scenes="${encodeURIComponent(JSON.stringify(project.model3d.scenes))}"` : ""}>
             <canvas aria-label="โมเดลสามมิติ ONE BANGKOK Pop-up Shop"></canvas>
             <div class="model-loading" role="status" aria-live="polite">
               <span></span>
               <strong>กำลังโหลดโมเดล 3D</strong>
               <small data-model-progress>0%</small>
             </div>
+            ${project.model3d.scenes ? `<div class="model-scenes" aria-label="เลือกซีนโมเดล">${project.model3d.scenes.map((scene, index) => `<button type="button" data-model-scene="${index}">${scene.name}</button>`).join("")}</div>` : ""}
             <div class="model-hint" aria-hidden="true">ลากเพื่อหมุน&nbsp;&nbsp;·&nbsp;&nbsp;เลื่อนเพื่อซูม</div>
           </div>
           <script>

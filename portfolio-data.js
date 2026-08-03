@@ -409,9 +409,17 @@ window.portfolioProjects = [
       "images/featured/33 raman/Scene 5.png",
       "images/featured/33 raman/Image(7).png",
       "images/featured/33 raman/Image(8).png",
-      "images/featured/33 raman/Image(9).png",
-      
+      "images/featured/33 raman/Image(9).png"
     ],
+    model3d: {
+      glb: "models/ramen-sukhumvit33/ramen-sukhumvit33.glb",
+      bytes: 59491476,
+      scenes: [
+        { name: "Scene 1", eye: [-201.91629231554134, -1850.2747502474099, 906.6591010971467], target: [-118.56177020925703, -1228.2971069421565, 678.4323094193221], up: [0.045398444910584694, 0.3387556794963617, 0.9397784690067437], fov: 35, unitScale: 0.0254 },
+        { name: "Scene 2", eye: [216.54456129568416, -397.5120987803429, 597.1593861562332], target: [93.8554278980841, 107.86085047926629, 178.30715413464375], up: [-0.14798074599838335, 0.6095524841346951, 0.7788115740658867], fov: 35, unitScale: 0.0254 },
+        { name: "Scene 3", eye: [216.54456129568416, -397.5120987803429, 597.1593861562332], target: [93.8554278980841, 107.86085047926629, 178.30715413464375], up: [-0.14798074599838335, 0.6095524841346951, 0.7788115740658867], fov: 35, unitScale: 0.0254 }
+      ]
+    },
     planUrl: "File/33 ramen/IA-00.pdf",
     tags: ["Ramen shop", "Compact planning", "Customer path"],
     summary: "Restaurant design for a ramen shop with compact planning, warm lighting and a clear customer path.",

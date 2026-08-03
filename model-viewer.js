@@ -17,6 +17,10 @@ if (stage) {
   const controls = new OrbitControls(camera, canvas);
   const modelRoot = new THREE.Group();
   const neutralLighting = Boolean(stage.dataset.glb);
+  const modelScenes = stage.dataset.modelScenes ? JSON.parse(decodeURIComponent(stage.dataset.modelScenes)) : [];
+  let modelCenter = new THREE.Vector3();
+  const modelScenes = stage.dataset.modelScenes ? JSON.parse(decodeURIComponent(stage.dataset.modelScenes)) : [];
+  let modelCenter = new THREE.Vector3();
   let autoRotate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
@@ -54,6 +58,8 @@ if (stage) {
     const box = new THREE.Box3().setFromObject(object);
     const size = box.getSize(new THREE.Vector3());
     const center = box.getCenter(new THREE.Vector3());
+    modelCenter.copy(center);
+    modelCenter.copy(center);
     const maxSize = Math.max(size.x, size.y, size.z);
     object.position.sub(center);
     const fitSize = Math.max(size.y, size.x / Math.max(camera.aspect, 1));
@@ -67,6 +73,44 @@ if (stage) {
     controls.maxDistance = maxSize * 5;
     controls.update();
   }
+
+  function showModelScene(index) {
+    const item = modelScenes[index];
+    if (!item) return;
+    const scale = Number(item.unitScale) || 1;
+    const convert = (point) => new THREE.Vector3(point[0] * scale, point[2] * scale, -point[1] * scale).sub(modelCenter);
+    camera.position.copy(convert(item.eye));
+    controls.target.copy(convert(item.target));
+    camera.up.set(item.up[0], item.up[2], -item.up[1]).normalize();
+    camera.fov = Number(item.fov) || 35;
+    camera.updateProjectionMatrix();
+    controls.update();
+    autoRotate = false;
+    stage.querySelectorAll("[data-model-scene]").forEach((button, buttonIndex) => button.classList.toggle("is-active", buttonIndex === index));
+  }
+
+  stage.querySelectorAll("[data-model-scene]").forEach((button) => {
+    button.addEventListener("click", () => showModelScene(Number(button.dataset.modelScene)));
+  });
+
+  function showModelScene(index) {
+    const item = modelScenes[index];
+    if (!item) return;
+    const scale = Number(item.unitScale) || 1;
+    const convert = (point) => new THREE.Vector3(point[0] * scale, point[2] * scale, -point[1] * scale).sub(modelCenter);
+    camera.position.copy(convert(item.eye));
+    controls.target.copy(convert(item.target));
+    camera.up.set(item.up[0], item.up[2], -item.up[1]).normalize();
+    camera.fov = Number(item.fov) || 35;
+    camera.updateProjectionMatrix();
+    controls.update();
+    autoRotate = false;
+    stage.querySelectorAll("[data-model-scene]").forEach((button, buttonIndex) => button.classList.toggle("is-active", buttonIndex === index));
+  }
+
+  stage.querySelectorAll("[data-model-scene]").forEach((button) => {
+    button.addEventListener("click", () => showModelScene(Number(button.dataset.modelScene)));
+  });
 
   function prepareModel(object) {
     object.traverse((child) => {
@@ -84,6 +128,8 @@ if (stage) {
     progress.textContent = "100%";
     loading.classList.add("is-done");
     stage.classList.add("is-ready");
+    if (modelScenes.length) showModelScene(0);
+    if (modelScenes.length) showModelScene(0);
   }
 
   if (stage.dataset.glb) {
