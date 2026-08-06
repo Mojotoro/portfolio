@@ -662,7 +662,7 @@ window.portfolioProjects = [
     downloads: [
       {
         label: "Cream Report Portable v1.0.0",
-        file: "files/Cream-Report-Portable-v1.0.0.zip",
+        file: "https://github.com/Mojotoro/portfolio/releases/download/cream-report-portable-20260806/Cream-Report-Portable-v1.0.0.zip",
         meta: "ZIP package"
       }
     ]
