@@ -662,7 +662,7 @@ window.portfolioProjects = [
     downloads: [
       {
         label: "Cream Report Portable v1.0.0",
-        file: "files/Cream-Report-Portable-v1.0.0-20260806.zip",
+        file: "files/Cream-Report-Portable-v1.0.0.zip",
         meta: "ZIP package"
       }
     ]
