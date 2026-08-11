@@ -16,7 +16,8 @@
     ".download-lock-label{display:block;margin-bottom:8px;color:#27313a;font-size:13px;font-weight:800}",
     ".download-lock-input{width:100%;min-height:48px;box-sizing:border-box;border:1px solid rgba(92,105,116,.22);border-radius:16px;padding:0 14px;color:#101418;background:rgba(255,255,255,.72);font:inherit;outline:none}",
     ".download-lock-input:focus{border-color:rgba(32,92,122,.62);box-shadow:0 0 0 4px rgba(32,92,122,.12)}",
-    ".download-lock-error{min-height:22px;margin:8px 0 14px;color:#a53333;font-size:13px;font-weight:700}",
+    ".download-lock-message{min-height:22px;margin:8px 0 14px;color:#a53333;font-size:13px;font-weight:700;line-height:1.45}",
+    ".download-lock-message.is-ok{color:#12394d}",
     ".download-lock-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}",
     ".download-lock-submit,.download-lock-request{min-height:44px;border-radius:999px;padding:0 18px;font-weight:900;text-decoration:none}",
     ".download-lock-submit{border:0;color:#fff;background:#12394d;cursor:pointer;box-shadow:0 14px 34px rgba(18,57,77,.24)}",
@@ -32,23 +33,34 @@
   overlay.setAttribute("role", "dialog");
   overlay.setAttribute("aria-modal", "true");
   overlay.setAttribute("aria-hidden", "true");
-  overlay.innerHTML = '<div class="download-lock-dialog"><div class="download-lock-head"><h2 class="download-lock-title">กรอกรหัสดาวน์โหลด</h2><button class="download-lock-close" type="button" aria-label="ปิด">x</button></div><p class="download-lock-copy">ไฟล์นี้ต้องใช้รหัสก่อนดาวน์โหลด ถ้ายังไม่มีรหัสให้ส่งคำขอไปที่อีเมลเจ้าของผลงาน</p><form class="download-lock-form"><label class="download-lock-label" for="download-lock-password">รหัสผ่าน</label><input class="download-lock-input" id="download-lock-password" type="password" autocomplete="one-time-code"><p class="download-lock-error" aria-live="polite"></p><div class="download-lock-actions"><button class="download-lock-submit" type="submit">ดาวน์โหลด</button><a class="download-lock-request" href="#">ขอรหัส</a></div></form></div>';
+  overlay.innerHTML = '<div class="download-lock-dialog"><div class="download-lock-head"><h2 class="download-lock-title">กรอกรหัสดาวน์โหลด</h2><button class="download-lock-close" type="button" aria-label="ปิด">x</button></div><p class="download-lock-copy">ไฟล์นี้ต้องใช้รหัสก่อนดาวน์โหลด ถ้ายังไม่มีรหัสให้กดขอรหัส ระบบจะเปิดหน้า Gmail พร้อมข้อความให้ส่งถึงเจ้าของผลงาน</p><form class="download-lock-form"><label class="download-lock-label" for="download-lock-password">รหัสผ่าน</label><input class="download-lock-input" id="download-lock-password" type="password" autocomplete="one-time-code"><p class="download-lock-message" aria-live="polite"></p><div class="download-lock-actions"><button class="download-lock-submit" type="submit">ดาวน์โหลด</button><a class="download-lock-request" href="#" target="_blank" rel="noopener">ขอรหัส</a></div></form></div>';
   document.body.appendChild(overlay);
 
   var form = overlay.querySelector(".download-lock-form");
   var input = overlay.querySelector(".download-lock-input");
-  var error = overlay.querySelector(".download-lock-error");
+  var message = overlay.querySelector(".download-lock-message");
   var requestLink = overlay.querySelector(".download-lock-request");
+
+  function setMessage(text, ok) {
+    message.textContent = text;
+    message.classList.toggle("is-ok", !!ok);
+  }
 
   function isProtectedDownload(link) {
     var href = link.getAttribute("href") || "";
     return link.hasAttribute("download") || href.indexOf("/releases/download/") !== -1 || /\.zip(\?|#|$)/i.test(href);
   }
 
-  function buildMailto() {
-    var subject = "Download code request";
-    var body = ["ขอรหัสดาวน์โหลดไฟล์จากเว็บไซต์ portfolio", "", "ไฟล์: " + (pendingLabel || "Download file"), "ลิงก์: " + pendingUrl, "หน้าเว็บ: " + window.location.href].join("\n");
-    return "mailto:" + ownerEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  function requestText() {
+    return ["ขอรหัสดาวน์โหลดไฟล์จากเว็บไซต์ portfolio", "", "ไฟล์: " + (pendingLabel || "Download file"), "ลิงก์: " + pendingUrl, "หน้าเว็บ: " + window.location.href].join("\n");
+  }
+
+  function gmailUrl() {
+    return "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(ownerEmail) + "&su=" + encodeURIComponent("Download code request") + "&body=" + encodeURIComponent(requestText());
+  }
+
+  function updateRequestLink() {
+    requestLink.href = gmailUrl();
   }
 
   function hex(buffer) {
@@ -66,9 +78,9 @@
     lastFocused = document.activeElement;
     pendingUrl = link.href;
     pendingLabel = (link.textContent || link.getAttribute("aria-label") || "").trim();
-    error.textContent = "";
+    setMessage("", false);
     input.value = "";
-    requestLink.href = buildMailto();
+    updateRequestLink();
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     window.setTimeout(function () { input.focus(); }, 0);
@@ -77,7 +89,7 @@
   function closeModal() {
     overlay.classList.remove("is-open");
     overlay.setAttribute("aria-hidden", "true");
-    error.textContent = "";
+    setMessage("", false);
     if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
   }
 
@@ -93,15 +105,28 @@
     openModal(link);
   });
 
+  requestLink.addEventListener("click", function () {
+    updateRequestLink();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(requestText()).then(function () {
+        setMessage("เปิด Gmail แล้ว และคัดลอกข้อความคำขอไว้ให้แล้ว หากหน้าเมลไม่เปิด ให้ส่งมาที่ " + ownerEmail, true);
+      }).catch(function () {
+        setMessage("เปิด Gmail แล้ว หากไม่ขึ้น ให้ส่งอีเมลมาที่ " + ownerEmail, true);
+      });
+    } else {
+      setMessage("เปิด Gmail แล้ว หากไม่ขึ้น ให้ส่งอีเมลมาที่ " + ownerEmail, true);
+    }
+  });
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     var password = input.value.trim();
     if (!password) {
-      error.textContent = "กรุณากรอกรหัสก่อนดาวน์โหลด";
+      setMessage("กรุณากรอกรหัสก่อนดาวน์โหลด", false);
       return;
     }
     if (await sha256(password) !== passwordHash) {
-      error.textContent = "รหัสไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง";
+      setMessage("รหัสไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง", false);
       input.select();
       return;
     }
