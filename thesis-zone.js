@@ -1,6 +1,6 @@
 ﻿(() => {
   const zones = {
-    hall: { number: "01", title: "Main Hall", subtitle: "Arrival and gathering space", count: 6 },
+    hall: { number: "01", title: "Main Hall", subtitle: "Arrival and gathering space", count: 9 },
     cafe: { number: "02", title: "Cafe", subtitle: "Social and refreshment space", count: 4 },
     meeting: { number: "03", title: "Meeting", subtitle: "Flexible collaboration area", count: 6 },
     restaurant: { number: "04", title: "Restaurant", subtitle: "Dining and shared experience", count: 4 },
@@ -35,4 +35,5 @@
       '<a class="' + (id === key ? "active" : "") + '" href="thesis-zone.html?zone=' + id + '"><small>' + item.number + '</small>' + item.title + '</a>'
     ).join("") + '</nav>';
 })();
+
 
