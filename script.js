@@ -418,7 +418,9 @@
     projectTranslations[getLanguage()]?.[project.id]?.[field] || project[field] || ""
   );
 
-  function projectUrl(id) {
+  function projectUrl(project) {
+    if (typeof project === "object" && project.pageUrl) return project.pageUrl;
+    const id = typeof project === "object" ? project.id : project;
     return `project.html?id=${encodeURIComponent(id)}`;
   }
 
@@ -545,7 +547,7 @@
     if (!grid) return;
 
     grid.innerHTML = projects.map((project) => `
-      <a class="portfolio-card ${project.cardSize ? `card-${project.cardSize}` : ""}" href="${projectUrl(project.id)}" data-category="${project.category}">
+      <a class="portfolio-card ${project.cardSize ? `card-${project.cardSize}` : ""}" href="${projectUrl(project)}" data-category="${project.category}">
         ${renderCardThumb(project)}
         <div class="card-body">
           <div class="card-meta">
@@ -733,14 +735,13 @@
             </div>
             <p>ลากเพื่อหมุน · เลื่อนเพื่อซูม · คลิกสองครั้งเพื่อเปิดหรือหยุดการหมุนอัตโนมัติ</p>
           </div>
-          <div class="model-stage" data-model-viewer ${project.model3d.glb ? `data-glb="${project.model3d.glb}"` : `data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}"`} data-model-bytes="${project.model3d.bytes || 0}" ${project.model3d.scenes ? `data-model-scenes="${encodeURIComponent(JSON.stringify(project.model3d.scenes))}"` : ""}>
+          <div class="model-stage" data-model-viewer data-obj="${project.model3d.obj}" data-mtl="${project.model3d.mtl}" data-model-bytes="21071749">
             <canvas aria-label="โมเดลสามมิติ ONE BANGKOK Pop-up Shop"></canvas>
             <div class="model-loading" role="status" aria-live="polite">
               <span></span>
               <strong>กำลังโหลดโมเดล 3D</strong>
               <small data-model-progress>0%</small>
             </div>
-            ${project.model3d.scenes ? `<div class="model-scenes" aria-label="เลือกซีนโมเดล">${project.model3d.scenes.map((scene, index) => `<button type="button" data-model-scene="${index}">${scene.name}</button>`).join("")}</div>` : ""}
             <div class="model-hint" aria-hidden="true">ลากเพื่อหมุน&nbsp;&nbsp;·&nbsp;&nbsp;เลื่อนเพื่อซูม</div>
           </div>
           <script>
@@ -788,9 +789,9 @@
       <section class="project-next">
         <div>
           <p>${t("nextProject")}</p>
-          <a href="${projectUrl(nextProject.id)}">${nextProject.title}</a>
+          <a href="${projectUrl(nextProject)}">${nextProject.title}</a>
         </div>
-        <a class="button primary" href="${projectUrl(nextProject.id)}">${t("next")}</a>
+        <a class="button primary" href="${projectUrl(nextProject)}">${t("next")}</a>
       </section>
     `;
 
