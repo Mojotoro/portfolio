@@ -68,3 +68,14 @@
 .hero-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}.hero-tags li{padding:8px 13px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:9px;font-weight:600;backdrop-filter:blur(8px)}
 .hero-actions{display:flex;justify-content:center;gap:10px;margin-top:20px}.hero-actions a{min-width:96px;padding:12px 16px;border-radius:999px;background:rgba(255,255,255,.17);color:#fff;text-align:center;text-decoration:none;font-size:9px;font-weight:700;backdrop-filter:blur(10px)}.hero-actions a.primary{background:#e86b2c}.hero-actions a:hover{background:#fff;color:#1a1008}
 @media(max-width:760px){.thesis-main .thesis-project-header{height:64px;padding:0 18px;grid-template-columns:1fr auto}.thesis-main .thesis-project-header nav{display:none}.thesis-wordmark span{font-size:14px}.thesis-wordmark b{font-size:19px}.thesis-header-actions{gap:10px}.thesis-main .thesis-header-actions .back{padding:9px 13px}.language-badge{width:36px;height:36px}.thesis-main .thesis-detail-hero .hero-copy{left:5vw;right:5vw;top:auto;bottom:7vh;width:auto;padding:0;transform:none}.thesis-main .thesis-detail-hero .hero-copy h1{font-size:20vw}.thesis-main .thesis-detail-hero .hero-copy>span{font-size:12px}.hero-tags{margin-top:16px}.hero-actions{margin-top:15px;gap:7px}.hero-actions a{min-width:0;padding:10px 12px}}
+
+/* Restore the original spatial-program composition. */
+.thesis-main .feature-grid{padding:4vw;background:var(--thesis-card);grid-template-columns:1fr 1fr;gap:18px}
+.thesis-main .feature-grid .wide{grid-column:1/-1}
+.thesis-main .feature-grid img{height:70vh;min-height:500px;aspect-ratio:auto}
+.thesis-main .feature-grid .wide img{height:75vh;aspect-ratio:auto}
+.thesis-main .chapter{padding:150px 4vw 100px;background:var(--thesis-card)}
+.thesis-main .chapter h2{max-width:1100px;margin-bottom:0}
+.thesis-main .gallery .wide{grid-column:1/-1}
+.thesis-main .gallery .wide img{height:74vh;aspect-ratio:auto}
+@media(max-width:640px){.thesis-main .feature-grid{padding:5vw;grid-template-columns:1fr}.thesis-main .feature-grid .wide,.thesis-main .gallery .wide{grid-column:auto}.thesis-main .feature-grid img,.thesis-main .feature-grid .wide img,.thesis-main .gallery .wide img{height:58vh;min-height:380px;aspect-ratio:auto}.thesis-main .chapter{padding:90px 5vw 55px}}
