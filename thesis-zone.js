@@ -16,10 +16,11 @@
   const root = document.getElementById("zoneRoot");
   const image = (index) => "images/thesis/gallery/" + key + "-" + String(index).padStart(2, "0") + ".webp";
   const images = Array.from({ length: zone.count }, (_, index) => image(index + 1));
+  const heroImage = key === "hall" ? image(7) : images[0];
 
   document.title = zone.title + " | THESIS | Ratipong Kaewjaijong";
   root.innerHTML =
-    '<section class="zone-hero zone-detail-hero"><img src="' + images[0] + '" alt="' + zone.title + '">' +
+    '<section class="zone-hero zone-detail-hero"><img src="' + heroImage + '" alt="' + zone.title + '">' +
     '<div class="shade"></div><div class="zone-hero-copy"><small>Selected thesis space</small><p>THESIS SPACE · ' + zone.number + '</p>' +
     '<h1>' + zone.title + '</h1><span>' + zone.subtitle + '</span>' +
     '<ul class="zone-hero-tags"><li>Interior architecture</li><li>Spatial experience</li><li>THESIS 2024</li></ul>' +
@@ -35,5 +36,7 @@
       '<a class="' + (id === key ? "active" : "") + '" href="thesis-zone.html?zone=' + id + '"><small>' + item.number + '</small>' + item.title + '</a>'
     ).join("") + '</nav>';
 })();
+
+
 
 
