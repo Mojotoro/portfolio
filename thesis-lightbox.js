@@ -1,5 +1,5 @@
-(() => {
-  const selectors = ".iso-track img:not([aria-hidden='true']), .zone-gallery img";
+﻿(() => {
+  const selectors = ".iso-track img:not([aria-hidden='true']), .zone-gallery img, .plan-editorial img";
   const images = () => Array.from(document.querySelectorAll(selectors));
   const dialog = document.createElement("dialog");
   dialog.className = "image-lightbox";
@@ -38,3 +38,4 @@
     if (event.key === "ArrowRight") show(current + 1);
   });
 })();
+
