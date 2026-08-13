@@ -253,7 +253,7 @@ window.portfolioProjects = [
     scope: "Retail experience, display, lighting",
     cover: "images/featured/samsung-real-01.jpg",
     cardImages: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg"],
-    images: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg", "images/shop/samsung0.png", "images/shop/samsung1.png", "images/shop/samsung2.png", "images/shop/samsung3.png"],
+    images: ["images/featured/samsung-real-01.jpg", "images/featured/samsung-real-02.jpg", "images/featured/samsung-real-03.jpg", "images/shop/samsung0.webp", "images/shop/samsung1.webp", "images/shop/samsung2.webp", "images/shop/samsung3.webp"],
     tags: ["Retail display", "Customer flow", "Brand presence"],
     summary: "Retail experience design with product display, lighting strategy, customer flow and brand presence.",
     highlight: "ออกแบบพื้นที่ขายให้สินค้าดูเด่น ลูกค้าเดินชมได้สะดวก และสื่อภาพลักษณ์แบรนด์ได้ชัดเจน"
@@ -631,6 +631,40 @@ window.portfolioProjects = [
     galleryFit: true
   },
   {
+    id: "thesis",
+    title: "THESIS",
+    category: "Visualization",
+    location: "Interior Architecture",
+    role: "Interior Designer",
+    status: "Academic Project",
+    year: "2024",
+    scope: "Planning, interior architecture, 3D visualization and drawing",
+    pageUrl: "thesis.html",
+    cover: "images/thesis/thesis-hero.webp",
+    cardSize: "wide",
+    cardImages: [
+      "images/thesis/thesis-hero.webp",
+      "images/thesis/thesis-hall.webp",
+      "images/thesis/thesis-restaurant.webp"
+    ],
+    images: [
+      "images/thesis/thesis-hero.webp",
+      "images/thesis/thesis-hall.webp",
+      "images/thesis/thesis-cafe.webp",
+      "images/thesis/thesis-meeting.webp",
+      "images/thesis/thesis-restaurant.webp",
+      "images/thesis/thesis-retail.webp",
+      "images/thesis/thesis-shop.webp",
+      "images/thesis/thesis-wine.webp",
+      "images/thesis/thesis-workshop.webp",
+      "images/thesis/thesis-plan.webp",
+      "images/thesis/thesis-elevation.webp",
+      "images/thesis/thesis-iso.webp"
+    ],
+    tags: ["Thesis", "Interior architecture", "Visualization"],
+    summary: "Interior architecture thesis combining public, social and activity spaces through planning, visualization and design development.",
+    highlight: "โครงการออกแบบสถาปัตยกรรมภายในที่เชื่อมพื้นที่พบปะ การเรียนรู้ และกิจกรรมหลากหลายรูปแบบเข้าด้วยกัน"
+  },  {
     id: "web-program-lab",
     title: "Cream Report Portable",
     category: "Digital",
