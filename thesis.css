@@ -79,3 +79,9 @@
 .thesis-main .gallery .wide{grid-column:1/-1}
 .thesis-main .gallery .wide img{height:74vh;aspect-ratio:auto}
 @media(max-width:640px){.thesis-main .feature-grid{padding:5vw;grid-template-columns:1fr}.thesis-main .feature-grid .wide,.thesis-main .gallery .wide{grid-column:auto}.thesis-main .feature-grid img,.thesis-main .feature-grid .wide img,.thesis-main .gallery .wide img{height:58vh;min-height:380px;aspect-ratio:auto}.thesis-main .chapter{padding:90px 5vw 55px}}
+
+/* Full-width dark archive band. */
+.thesis-main .media-link-band{padding-left:0;padding-right:0}
+.thesis-main .media-link-card{width:100%;border-radius:0;padding-left:8vw;padding-right:8vw}
+@media(max-width:640px){.thesis-main .media-link-card{padding-left:5vw;padding-right:5vw}}
+
