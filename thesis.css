@@ -34,3 +34,8 @@
 .thesis-main .iso-viewport,.thesis-main .iso-track,.thesis-main .iso-track img{background:var(--thesis-card)!important}
 .thesis-main .iso-track img{border:0;mix-blend-mode:multiply}
 
+
+/* Isometric gallery requested as a continuous pure-white canvas. */
+.thesis-main .iso-showcase,.thesis-main .iso-viewport,.thesis-main .iso-track,.thesis-main .iso-track img{background:#fff!important}
+.thesis-main .iso-track img{mix-blend-mode:normal}
+
