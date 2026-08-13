@@ -92,3 +92,9 @@
 .thesis-main .gallery .space-card figcaption span{line-height:1.15}
 .thesis-main .gallery .space-card figcaption small{display:block;margin-top:7px;color:#ddd;font-size:12px;font-weight:400;line-height:1.35}
 .thesis-main .gallery .space-card figcaption i{display:none}
+
+/* Stabilize card numbers 01-08 and lower them slightly. */
+.thesis-main .feature-grid .space-card figcaption,.thesis-main .gallery .space-card figcaption{align-items:flex-start}
+.thesis-main .feature-grid .space-card figcaption b,.thesis-main .gallery .space-card figcaption b{display:block;flex:0 0 24px;width:24px;min-width:24px;margin-top:5px;line-height:1;font-variant-numeric:tabular-nums;transform:none}
+.thesis-main .feature-grid .space-card figcaption span,.thesis-main .gallery .space-card figcaption span{display:block;min-width:0}
+@media(max-width:640px){.thesis-main .feature-grid .space-card figcaption b,.thesis-main .gallery .space-card figcaption b{margin-top:4px}}
