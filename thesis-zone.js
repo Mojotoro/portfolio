@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const zones = {
     hall: { number: "01", title: "Main Hall", subtitle: "Arrival and gathering space", count: 6 },
     cafe: { number: "02", title: "Cafe", subtitle: "Social and refreshment space", count: 4 },
@@ -19,12 +19,14 @@
 
   document.title = zone.title + " | THESIS | Ratipong Kaewjaijong";
   root.innerHTML =
-    '<section class="zone-hero"><img src="' + images[0] + '" alt="' + zone.title + '">' +
-    '<div class="shade"></div><div class="zone-hero-copy"><p>THESIS SPACE ' + zone.number + '</p>' +
-    '<h1>' + zone.title + '</h1><span>' + zone.subtitle + '</span></div></section>' +
+    '<section class="zone-hero zone-detail-hero"><img src="' + images[0] + '" alt="' + zone.title + '">' +
+    '<div class="shade"></div><div class="zone-hero-copy"><small>Selected thesis space</small><p>THESIS SPACE · ' + zone.number + '</p>' +
+    '<h1>' + zone.title + '</h1><span>' + zone.subtitle + '</span>' +
+    '<ul class="zone-hero-tags"><li>Interior architecture</li><li>Spatial experience</li><li>THESIS 2024</li></ul>' +
+    '<div class="zone-hero-actions"><a class="primary" href="thesis.html">THESIS</a><a href="#zoneGallery">View Gallery</a></div></div></section>' +
     '<section class="zone-intro"><p class="label">SPACE GALLERY · ' + String(zone.count).padStart(2, "0") + ' VIEWS</p>' +
-    '<h2>Explore the space<br>from every angle.</h2></section>' +
-    '<section class="zone-gallery">' + images.map((src, index) =>
+    '<div><h2>Explore the space<br>from every angle.</h2><p>รายละเอียดภาพและบรรยากาศของพื้นที่ ' + zone.title + ' แสดงแนวคิด วัสดุ แสง และความสัมพันธ์ของการใช้งานในแต่ละมุมมอง</p></div></section>' +
+    '<section class="zone-gallery" id="zoneGallery">' + images.map((src, index) =>
       '<figure class="' + (index === 0 || index % 3 === 0 ? "wide" : "") + '">' +
       '<img src="' + src + '" alt="' + zone.title + ' view ' + (index + 1) + '" loading="' + (index < 2 ? "eager" : "lazy") + '">' +
       '<figcaption>' + zone.number + ' · VIEW ' + String(index + 1).padStart(2, "0") + '</figcaption></figure>'
@@ -33,3 +35,4 @@
       '<a class="' + (id === key ? "active" : "") + '" href="thesis-zone.html?zone=' + id + '"><small>' + item.number + '</small>' + item.title + '</a>'
     ).join("") + '</nav>';
 })();
+
