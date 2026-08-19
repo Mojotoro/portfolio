@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 const stage = document.querySelector("[data-model-viewer]");
@@ -16,33 +15,26 @@ if (stage) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const controls = new OrbitControls(camera, canvas);
   const modelRoot = new THREE.Group();
-  const neutralLighting = Boolean(stage.dataset.glb);
-  const modelScenes = stage.dataset.modelScenes ? JSON.parse(decodeURIComponent(stage.dataset.modelScenes)) : [];
-  let modelCenter = new THREE.Vector3();
-  const modelMaterials = new Set();
   let autoRotate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.localClippingEnabled = true;
-  renderer.toneMappingExposure = neutralLighting ? 1.4 : 1.15;
+  renderer.toneMappingExposure = 1.15;
   scene.add(modelRoot);
-  scene.add(new THREE.HemisphereLight(neutralLighting ? 0xffffff : 0xfff7ed, neutralLighting ? 0x8f8b85 : 0x6f6257, neutralLighting ? 3.6 : 2.8));
+  scene.add(new THREE.HemisphereLight(0xfff7ed, 0x6f6257, 2.8));
 
-  const key = new THREE.DirectionalLight(0xffffff, neutralLighting ? 4.2 : 3.2);
+  const key = new THREE.DirectionalLight(0xffffff, 3.2);
   key.position.set(4, 7, 5);
   scene.add(key);
-  const fill = new THREE.DirectionalLight(neutralLighting ? 0xffffff : 0xe79a54, neutralLighting ? 2.1 : 1.4);
+  const fill = new THREE.DirectionalLight(0xe79a54, 1.4);
   fill.position.set(-5, 2, -3);
   scene.add(fill);
 
   controls.enableDamping = true;
   controls.dampingFactor = 0.07;
   controls.autoRotateSpeed = 0.7;
-  controls.enablePan = true;
-  controls.screenSpacePanning = true;
-  controls.zoomToCursor = true;
+  controls.enablePan = false;
 
   function updateProgress(event) {
     const expectedBytes = Number(stage.dataset.modelBytes) || 0;
@@ -58,7 +50,6 @@ if (stage) {
     const box = new THREE.Box3().setFromObject(object);
     const size = box.getSize(new THREE.Vector3());
     const center = box.getCenter(new THREE.Vector3());
-    modelCenter.copy(center);
     const maxSize = Math.max(size.x, size.y, size.z);
     object.position.sub(center);
     const fitSize = Math.max(size.y, size.x / Math.max(camera.aspect, 1));
@@ -68,71 +59,34 @@ if (stage) {
     camera.far = distance * 20;
     camera.updateProjectionMatrix();
     controls.target.set(0, 0, 0);
-    controls.minDistance = maxSize * 0.015;
-    controls.maxDistance = maxSize * 5;
+    controls.minDistance = maxSize * 0.45;
+    controls.maxDistance = maxSize * 3;
     controls.update();
   }
 
-  function showModelScene(index) {
-    const item = modelScenes[index];
-    if (!item) return;
-    const scale = Number(item.unitScale) || 1;
-    const convert = (point) => new THREE.Vector3(point[0] * scale, point[2] * scale, -point[1] * scale).sub(modelCenter);
-    camera.position.copy(convert(item.eye));
-    controls.target.copy(convert(item.target));
-    camera.up.set(0, 1, 0);
-    camera.fov = Number(item.fov) || 35;
-    camera.updateProjectionMatrix();
-    let clippingPlanes = [];
-    if (item.section) {
-      const point = convert(item.section.point);
-      const normal = new THREE.Vector3(item.section.normal[0], item.section.normal[2], -item.section.normal[1]).normalize();
-      clippingPlanes = [new THREE.Plane().setFromNormalAndCoplanarPoint(normal, point)];
-    }
-    modelMaterials.forEach((material) => {
-      material.clippingPlanes = clippingPlanes;
-      material.needsUpdate = true;
-    });
-    controls.update();
-    autoRotate = false;
-    stage.querySelectorAll("[data-model-scene]").forEach((button, buttonIndex) => button.classList.toggle("is-active", buttonIndex === index));
-  }
-
-  stage.querySelectorAll("[data-model-scene]").forEach((button) => {
-    button.addEventListener("click", () => showModelScene(Number(button.dataset.modelScene)));
-  });
-
-  function prepareModel(object) {
-    object.traverse((child) => {
-      if (!child.isMesh) return;
-      child.castShadow = false;
-      child.receiveShadow = false;
-      const list = Array.isArray(child.material) ? child.material : [child.material];
-      list.forEach((material) => {
-        modelMaterials.add(material);
-        material.side = THREE.DoubleSide;
-        if (material.map) material.map.colorSpace = THREE.SRGBColorSpace;
-      });
-    });
-    modelRoot.add(object);
-    frameModel(modelRoot);
-    progress.textContent = "100%";
-    loading.classList.add("is-done");
-    stage.classList.add("is-ready");
-    if (modelScenes.length) showModelScene(0);
-  }
-
-  if (stage.dataset.glb) {
-    new GLTFLoader().load(stage.dataset.glb, (gltf) => prepareModel(gltf.scene), updateProgress, showError);
-  } else {
-    const materialLoader = new MTLLoader();
-    materialLoader.load(stage.dataset.mtl, (materials) => {
+  const materialLoader = new MTLLoader();
+  materialLoader.load(stage.dataset.mtl, (materials) => {
     materials.preload();
     const objectLoader = new OBJLoader();
     objectLoader.setMaterials(materials);
-    objectLoader.load(stage.dataset.obj, prepareModel, updateProgress, showError);
+    objectLoader.load(stage.dataset.obj, (object) => {
+      object.traverse((child) => {
+        if (!child.isMesh) return;
+        child.castShadow = false;
+        child.receiveShadow = false;
+        const list = Array.isArray(child.material) ? child.material : [child.material];
+        list.forEach((material) => {
+          material.side = THREE.DoubleSide;
+          if (material.map) material.map.colorSpace = THREE.SRGBColorSpace;
+        });
+      });
+      modelRoot.add(object);
+      frameModel(modelRoot);
+      progress.textContent = "100%";
+      loading.classList.add("is-done");
+      stage.classList.add("is-ready");
     }, updateProgress, showError);
-  }
+  }, updateProgress, showError);
 
   function showError(error) {
     console.error("3D model failed to load", error);
