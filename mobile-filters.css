@@ -1,0 +1,36 @@
+/* Keep every project filter visible and reliably tappable on phones. */
+@media (max-width: 640px) {
+  .portfolio-browser .browser-tools {
+    position: relative;
+    top: auto;
+    z-index: 2;
+    overflow: visible;
+    padding: 12px;
+  }
+
+  .portfolio-browser .filter-bar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    overflow: visible;
+    touch-action: pan-y;
+  }
+
+  .portfolio-browser .filter-chip {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 8px;
+    line-height: 1.2;
+    white-space: normal;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .portfolio-browser .result-count {
+    padding: 2px 2px 0;
+  }
+}
