@@ -1,0 +1,54 @@
+.portfolio-print {
+  position: relative;
+  box-sizing: border-box;
+  width: fit-content;
+  margin: 0;
+  padding: 6px;
+  background: #f5f1e8;
+  color: #39352e;
+  box-shadow: 0 12px 48px rgb(0 0 0 / 35%);
+}
+
+.portfolio-print > img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 80px);
+  max-height: calc(100vh - 140px);
+  max-height: calc(100dvh - 140px);
+  object-fit: contain;
+}
+
+.portfolio-print > figcaption {
+  position: absolute;
+  inset-inline: 6px;
+  bottom: 6px;
+  padding: 15px 4px clamp(8px, 1vw, 14px);
+  background: linear-gradient(transparent, rgb(0 0 0 / 19%));
+  color: rgb(255 255 255 / 70%);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 42%);
+  pointer-events: none;
+  font: 400 clamp(10.5px, .9vw, 12px)/1.2 Georgia, serif;
+  letter-spacing: .04em;
+  text-align: center;
+}
+
+.image-lightbox .portfolio-print {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-lightbox .portfolio-print > img {
+  max-width: calc(100vw - 156px);
+}
+
+@media (max-width: 760px) {
+  .portfolio-print > img,
+  .image-lightbox .portfolio-print > img {
+    max-width: calc(100vw - 34px);
+    max-height: calc(100vh - 168px);
+    max-height: calc(100dvh - 168px);
+  }
+}

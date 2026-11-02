@@ -4,7 +4,7 @@
   const dialog = document.createElement("dialog");
   dialog.className = "image-lightbox";
   dialog.setAttribute("aria-label", "Full image viewer");
-  dialog.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close image">×</button><button class="lightbox-nav prev" type="button" aria-label="Previous image">‹</button><img alt=""><button class="lightbox-nav next" type="button" aria-label="Next image">›</button><span class="lightbox-count"></span>';
+  dialog.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close image">×</button><button class="lightbox-nav prev" type="button" aria-label="Previous image">‹</button><figure class="portfolio-print"><img alt=""><figcaption>Ratipong Kaewjaijong</figcaption> </figure><button class="lightbox-nav next" type="button" aria-label="Next image">›</button><span class="lightbox-count"></span>';
   document.body.appendChild(dialog);
 
   const fullImage = dialog.querySelector("img");
